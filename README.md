@@ -8,3 +8,8 @@ In one case, the audio generation is done with an external software, SuperCollid
 
 The first commit was allowed to upload video and audio files because they are useful for making the patch work.
 There is no version control on the audio files, unless explicitly changed by a git user.
+
+TODO:
+- [ ] Add information about how to install Touch Designer and SuperCollider, including which version and how to configure the software on Windows 11
+- [ ] Add explanation of every patch, what it does and how it can be used and tweaked
+- [ ] Include possible troubleshooting
