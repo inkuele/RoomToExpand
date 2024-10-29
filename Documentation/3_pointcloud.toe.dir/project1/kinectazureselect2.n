@@ -1,0 +1,6 @@
+TOP:kinectazureselect
+comment "you can use kinect azure select object for getting different datasets from the same kinect TOP"
+tile 300 100 130 105
+flags =  viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end

@@ -1,0 +1,10 @@
+TOP:comp
+tile 1125 150 130 105
+flags =  viewer 1 display on parlanguage 0
+inputs
+{
+0 	lookup2
+1 	fit1
+}
+color 0.55 0.55 0.55 
+end

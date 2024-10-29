@@ -1,0 +1,6 @@
+?
+cutofflog 67108881 2.56 op('math2')['p1/elbow_l:depthv']
+cutofffrequency 67108864 3.47428
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

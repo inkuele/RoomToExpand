@@ -1,0 +1,7 @@
+?
+file 201326609 "" app.samplesFolder+'/Audio/JeremyCaulfield_www.dumb-unit.com.mp3'
+index 201326609 0 "me.time.frame / root.time.rate"
+timecodeop 201326609 "" tdu.Timecode()
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

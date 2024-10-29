@@ -1,0 +1,12 @@
+?
+tx 0 0
+ty 0 -10.485
+tz 0 -39.181
+px 0 -4.58314
+py 0 -7.43651
+pz 0 0.333565
+lookat 0 geo1
+orthowidth 0 1
+aperture 0 44.1
+opviewer 0 ./out1
+?

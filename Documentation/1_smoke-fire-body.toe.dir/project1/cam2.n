@@ -1,0 +1,6 @@
+COMP:cam
+tile 725 400 160 130
+flags =  viewer 1 pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 29 0.2 1 1 0 0 1 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0 -0 -5 1 16 1 1 1 195 787 1 -1 1 1 11 0 0 0 4 0 1
+end

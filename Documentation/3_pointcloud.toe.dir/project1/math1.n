@@ -1,0 +1,10 @@
+TOP:math
+comment "scale up the distance between spacial data"
+tile 300 -75 130 105
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	kinectazure1
+}
+color 0.55 0.55 0.55 
+end

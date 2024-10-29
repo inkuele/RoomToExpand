@@ -1,0 +1,6 @@
+?
+driver 67108864 asio
+device 67108864 Focusrite_USB_ASIO||2
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

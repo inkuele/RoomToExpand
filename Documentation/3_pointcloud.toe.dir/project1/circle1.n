@@ -1,0 +1,7 @@
+SOP:circle
+comment "sop inside geometry, make sure render flag turned on (purple dot)"
+tile 450 -200 130 90
+flags =  viewer 1 render on display on parlanguage 0
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -0.05 0.05 -0.05 0.05 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 -0.160195 1 15 1 1 1 195 4883 1 -1 1 1 9 0 0 3 0 1
+end

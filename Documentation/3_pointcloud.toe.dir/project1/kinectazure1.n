@@ -1,0 +1,7 @@
+TOP:kinectazure
+comment "main kinect object (set to point cloud)"
+tile 100 225 130 105
+flags =  viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 37 0 0 1 0.2 1 1 0 0 1 -7.672 8.937 -0.225 6.261 0 9.296 0 0 1 -0.718944 3.27571 4.65141 1 0 0 0 0 1 0 0 0 0 1 0 0.138774 -2.83352 -31.2897 1 19 0 1 0 1 1 1 1 195 4883 1 -1 1 1 9 0 0 3 0 1
+end

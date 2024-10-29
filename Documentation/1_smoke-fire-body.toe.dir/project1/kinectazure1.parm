@@ -1,0 +1,6 @@
+?
+sensor 67108864 000233924512
+depthmode 67108864 widebinned
+modelpath 201326609 "" "app.configFolder + \"/Models/dnn_model_2_0_op11.onnx\""
+image 67108864 playerindex
+?

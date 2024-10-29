@@ -1,0 +1,8 @@
+COMP:geo
+v 551.396 290.213 0.598485
+comment "multiply the box object inside it to each pointcloud location and color"
+tile 675 -100 160 130
+flags =  viewer 1 render on display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1 1 -1 1 -1 1 0 0 1 10.8119 -23.9885 11.8567 -0.737016 0.326886 -0.591568 -6.93889e-18 -6.04462e-05 0.87523 0.483706 -1.38778e-17 0.675875 0.356535 -0.645039 -6.93889e-18 -2.51022 10.0185 4.16133 1 15 1 1 1 195 4883 1 -1 1 1 9 0 0 3 0 1
+end
