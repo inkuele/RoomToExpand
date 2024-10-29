@@ -1,0 +1,9 @@
+Hello,
+
+I want you to act as a touch designer expert.
+
+I have some touch designer patches and I would like to document them. 
+
+I am exporting them using the Toeexpand tool
+https://derivative.ca/UserGuide/Toeexpand
+which generates text files describing the different elements in the patch.
