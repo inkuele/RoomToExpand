@@ -22,6 +22,7 @@ This documentation is generated using an automated system to handle TouchDesigne
 ### Requirements
 - [Toeexpand utility](https://derivative.ca/UserGuide/Toeexpand) by Derivative
 - Scripts provided in the `Documentation/Scripts` folder
+- Python 3.* 
 
 ### Steps
 
@@ -45,9 +46,9 @@ This documentation is generated using an automated system to handle TouchDesigne
 
 4. **Batch Conversion of Multiple Patches**  
    Use `batch_concat.sh` to process all `.dir` directories in the `Documentation` folder and convert them into individual `.txt` files.
-   - Run the following from the `Documentation/Scripts` folder:
-     ```bash
-     ./batch_concat.sh
+   - Run the following from the `Documentation/Scripts` folder, double click on it
+     ```
+     ./batch_concat.bat
      ```
 
 5. **Submit Files to ChatGPT for Documentation**  
