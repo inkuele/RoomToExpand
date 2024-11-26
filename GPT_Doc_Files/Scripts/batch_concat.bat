@@ -3,7 +3,7 @@
 cd /d "%~dp0\.."
 
 :: Loop through each .dir directory in the root folder
-for /d %%d in (TD_Patch_Files/*.dir) do (
+for /d %%d in (TD_Patch_Files\*.dir) do (
     echo Processing directory: %%d
     python Scripts\concat_dir_files.py "%%d"
 )
