@@ -1,0 +1,9 @@
+?
+colorr 0 0.498039
+colorg 0 1
+colorb 0 0.588235
+alpha 50 1 op('null5')['chan1']
+targetsop 0 out1
+pcaptpath 0 pCaptPath0
+pcaptdata 0 pCaptData0
+?

@@ -1,0 +1,9 @@
+CHOP:audioplay
+tile 1875 -450 188 153
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	trigger1
+}
+color 0.55 0.55 0.55 
+end

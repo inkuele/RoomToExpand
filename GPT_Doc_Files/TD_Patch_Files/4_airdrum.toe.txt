@@ -1,0 +1,2816 @@
+.application
+
+
+Desk..
+ layout 
+desk -c  
+desk -n pane1 
+
+pane1
+desk -p project1 pane1
+desk -t neteditor pane1
+desk -k 0 pane1
+neteditor -c 1 -e 0 -G 0.75 -o 0 -r 1 -P 0.8 -s 0 -w 0 -x 0 -t 1 -d 1 -g 0 -p pane1
+
+browser off
+winplacement ontop0 modeauto posx0 posy0 sizex1024 sizey768 enable1 perform.pathperform perform.start0
+
+
+------------------------------
+
+.build
+
+version 099
+build 2023.11880
+time Mon Oct  7 16:27:02 2024
+osname Windows
+osversion 10
+
+
+------------------------------
+
+.grps
+
+-2
+0
+
+
+------------------------------
+
+.parm
+
+?
+?
+
+
+------------------------------
+
+.root
+
+v -3520.2 -1486.55 11.8279
+end
+
+
+------------------------------
+
+.start
+
+cookrate 60
+clock -f 1 -s 1 -o 0 -w 0
+realtime on
+viewers off
+expectednodes 91 30160
+resetaudioondevicechange off
+
+
+------------------------------
+
+localmapsmaster.n
+
+COMP:base
+v 408.5 324 1
+tile 210 140 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsreplicator1.n
+
+COMP:replicator
+tile 10 140 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsreplicator1.parm
+
+?
+repsuffixstart 67108864 0
+template 67108864 select2
+namefromtable 67108864 colbyname
+colname 67108864 id
+opprefix 67108864 id
+master 67108864 master
+destination 201326609 "" me.parent
+callbacks 67108864 replicator1_callbacks
+?
+
+
+------------------------------
+
+localmapsreplicator1.replicator
+
+3
+0
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.n
+
+DAT:text
+tile 10 -20 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+dock replicator1
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.parm
+
+?
+defaultreadencoding 67108864 cp1252
+?
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.text
+
+2
+ me - this DAT
+ 
+ comp - the replicator component which is cooking
+ allOps - a list of all replicants, created or existing
+ newOps - the subset that were just created
+ template - table DAT specifying the replicator attributes
+ master - the master operator
+
+
+def replicatecomp, allOps, newOps, template, master:
+
+	for c in newOps:
+		c.display  True
+		c.render  True
+		c.par.display  1
+		c.par.clone  comp.par.master
+	
+		c.par.clone.expr  "op'..mididevice'me.digits, 'definition'  'mapmaster1'"
+
+		pass
+
+	return
+
+
+------------------------------
+
+localmapsselect1.n
+
+DAT:select
+tile -300 160 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect1.parm
+
+?
+dat 67108864 localmididevice
+rowindexend 201326609 0 "me.inputs0.numRows - 1"
+rowexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+extractcols 67108864 bynames
+colindexend 201326609 4 "me.inputs0.numCols - 1"
+colnames 67108864 "id definition"
+colexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+?
+
+
+------------------------------
+
+localmapsselect2.n
+
+DAT:select
+tile -150 160 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect2.parm
+
+?
+extractrows 67108864 bynames
+rowindexend 201326609 0 "me.inputs0.numRows - 1"
+rownames 67108864 ?
+rowexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+fromcol 67108864 1
+colindexend 201326609 1 "me.inputs0.numCols - 1"
+colexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+?
+
+
+------------------------------
+
+localmaps.n
+
+COMP:base
+v 309.531 186.79 0.93596
+tile 250 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaps.parm
+
+?
+opviewer 67108864 .id1
+?
+
+
+------------------------------
+
+localmaster_beat.beat
+
+1
+
+
+------------------------------
+
+localmaster_beat.chop
+
+5
+1
+
+
+------------------------------
+
+localmaster_beat.n
+
+CHOP:beat
+tile 50 -125 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaster_beat.parm
+
+?
+updateglobal 67108864 on
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+localmidi.lod
+
+4W.buildversion 099
+build 2023.11880
+time Mon Oct  7 16:27:02 2024
+osname Windows
+osversion 10
+4	Ydevice.nDAT:table
+tile 50 -130 644 126
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4device.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 1
+cols 67108864 5
+?
+4
+_device.table1
+idindevice	outdevice
+definitionchannel4rtemplate.nCOMP:base
+v 262.219 202.09 0.818811
+tile 310 50 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4template.parm?
+opviewer 67108864 .icon
+?
+64	template4iicon.nTOP:null
+tile 170 0 130 67
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	text1
+
+color 0.55 0.55 0.55 
+end
+4
+icon.parm?
+fillmode 67108864 useinput
+filtertype 67108864 useinput
+?
+4Stext1.nTOP:text
+tile 0 0 130 67
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Dtext1.parm?
+text 67108864 "User Map"
+legacyparsing 67108864 on
+leadingzero 67108864 off
+chopvaluereplace 67108864 on
+legacyfontselection 67108864 on
+dispmethod 67108864 polygon
+fontsizex 67108864 24.6
+fontsizexunit 67108864 pixels
+fontsizeyunit 67108864 pixels
+resolutionw 67108864 200
+resolutionh 67108864 100
+resmult 67108864 off
+?
+4
+Xbuttons.nDAT:table
+tile 350 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+abuttons.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 16
+cols 67108864 3
+?
+4buttons.table1
+b1b? 41 7fb? 41 00b2b? 42 7fb? 42 00b3b? 43 7fb? 43 00b4b? 44 7fb? 44 00b5b? 45 7fb? 45 00b6b? 46 7fb? 46 00b7b? 47 7fb? 47 00b8b? 48 7fb? 48 00b9b? 49 7fb? 49 00b10b? 4a 7fb? 4a 00b11b? 4b 7fb? 4b 00b12b? 4c 7fb? 4c 00b13b? 4d 7fb? 4d 00b14b? 4e 7fb? 4e 00b15b? 4f 7fb? 4f 00b16b? 50 7fb? 50 004
+Xsliders.nDAT:table
+tile 170 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+asliders.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 16
+cols 67108864 2
+?
+4sliders.table1
+s1b? 51 --s2b? 52 --s3b? 53 --s4b? 54 --s5b? 55 --s6b? 56 --s7b? 57 --s8b? 58 --s9b? 01 --s10b? 02 --s11b? 03 --s12b? 04 --s13b? 05 --s14b? 06 --s15b? 07 --s16b? 08 --4
+Vattributes.nDAT:table
+tile 0 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4attributes.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 1
+cols 67108864 2
+?
+46attributes.table1
+nameUser Device Map4
+zmapmaster1.nCOMP:base
+v 86.156 363.08 1.24945
+tile 520 0 160 130
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+64mapmaster14out1.nCHOP:out
+tile 250 25 130 90
+flags   current on viewer 1 parlanguage 0
+inputs
+
+0 	midiinmap
+
+color 0.55 0.55 0.55 
+view 0 6 0 0 0 0 0 0
+end
+4
+fout1.parm?
+label 201326609 "" me.name
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4
+wbuttons.nCHOP:null
+tile 250 -210 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_buttons
+
+color 0.55 0.55 0.55 
+end
+4
+,buttons.parm?
+autoexportroot 201326609 "" me.parent
+?
+4
+midiout.nCHOP:midiout
+tile 590 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+midiout.parm?
+id 67108881 1 parent.digits
+timecodeop 201326609 "" me.time.timecode
+timeslice 67108864 on
+autoexportroot 201326609 "" me.parent
+?
+4
+midiout.chop5
+1
+4imidiout.ts65538
+0
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  0
+
+
+4
+wsliders.nCHOP:null
+tile 250 -100 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_sliders
+
+color 0.55 0.55 0.55 
+end
+4
+,sliders.parm?
+autoexportroot 201326609 "" me.parent
+?
+4chopexec1.nDAT:chopexec
+tile 420 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0.388199 0 0 1 1
+end
+4hchopexec1.parm?
+fromop 201326609 "" me.parent
+chop 67108864 "sliders buttons"
+defaultreadencoding 67108864 cp1252
+?
+4fchopexec1.text2
+K me - this DAT
+ 
+ channel - the Channel object which has changed
+ sampleIndex - the index of the changed sample
+ val - the numeric value of the changed sample
+ prev - the previous sample value
+ 
+ Make sure the corresponding toggle is enabled in the CHOP Execute DAT.
+
+ use the methods of midiout, see midioutCHOP Class help
+ For example;
+ maptable  op'localmididevice'
+ ch  maptableparent.digits, 'channel'
+ op'midiout'.sendNoteOnch, index, val
+ op'midiout'.sendNoteOffch, index, val
+ op'midiout'.sendControlch, index, val
+
+
+def offToOnchannel, sampleIndex, val, prev:
+	return
+
+def whileOnchannel, sampleIndex, val, prev:
+	return
+
+def onToOffchannel, sampleIndex, val, prev:
+	return
+
+def whileOffchannel, sampleIndex, val, prev:
+	return
+
+def valueChangechannel, sampleIndex, val, prev:
+	return
+	4midiinmap.nCHOP:midiinmap
+tile 50 25 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midiinmap.parm?
+id 67108913 OPD parent.digits
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4collect_buttons.nCHOP:constant
+tile 50 -210 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4jcollect_buttons.parm?
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4collect_sliders.nCHOP:constant
+tile 50 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4jcollect_sliders.parm?
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+554Ymidi_inputs.nDAT:table
+tile 200 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midi_inputs.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 0
+cols 67108864 0
+?
+4midi_inputs.table1
+4userdevices.nCOMP:base
+v 578.908 181.843 0.43217
+tile 800 50 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Xmidi_outputs.nDAT:table
+tile 50 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midi_outputs.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 0
+cols 67108864 0
+?
+47midi_outputs.table1
+Microsoft GS Wavetable Synth
+
+------------------------------
+
+localmidi.n
+
+COMP:base
+v 144.459 286.388 0.840696
+tile 50 -300 160 130
+flags   current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmidi.parm
+
+?
+opviewer 67108864 .device
+loadondemand 67108864 on
+?
+
+
+------------------------------
+
+localset_variables.n
+
+DAT:table
+tile 25 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localset_variables.table
+
+1
+TOENAMECairdrum very simple hand tracking final For Two Playerslink.2.toe
+
+------------------------------
+
+localshortcuts.n
+
+DAT:filein
+tile 325 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localshortcuts.parm
+
+?
+file 67108881 "" "app.configFolder  'PanelShortcuts.txt'"
+converttable 67108864 on
+?
+
+
+------------------------------
+
+localtime.n
+
+COMP:time
+tile 450 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localtime.parm
+
+?
+rate 67108881 60 cookRate
+clone 67108864 syslocaltime
+?
+
+
+------------------------------
+
+localvariables.n
+
+DAT:null
+tile 175 0 130 90
+flags   parlanguage 0
+inputs
+
+0 	set_variables
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.n
+
+COMP:base
+tile -200 -725 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.parm
+
+?
+opviewer 67108864 .variables
+?
+
+
+------------------------------
+
+perform.n
+
+COMP:window
+comment "Perform Mode configuration:nPress F1 to enter Perform Mode, ESC to exit"
+tile -200 40 160 130
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+perform.parm
+
+?
+winop 67108864 project1
+title 201326609 "" me
+monitor 67108864 1
+justifyh 67108864 center
+justifyv 67108864 center
+size 67108864 fill
+borders 67108864 off
+?
+
+
+------------------------------
+
+project1BG.n
+
+TOP:null
+tile 1900 250 130 90
+flags   viewer 1 display on parlanguage 0
+inputs
+
+0 	comp1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay1.chop
+
+5
+1
+
+
+------------------------------
+
+project1audioplay1.n
+
+CHOP:audioplay
+tile 1875 -450 188 153
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay1.parm
+
+?
+specifydevice 67108864 on
+device 67108864 0.0.0.00000000.3cb19153-91a2-4ddc-a686-bce4218a2666Lautsprecher_Focusrite_USB_Audio2
+file 201326608 audio-samplesOHCR78.wav app.configFolder'AudioNotify.aiff'
+mode 67108864 trigger
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1audioplay1.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p1hand_l:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1hand_l:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1audioplay2.chop
+
+5
+1
+
+
+------------------------------
+
+project1audioplay2.n
+
+CHOP:audioplay
+tile 1875 0 188 120
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay2.parm
+
+?
+specifydevice 67108864 on
+device 67108864 0.0.0.00000000.3cb19153-91a2-4ddc-a686-bce4218a2666Lautsprecher_Focusrite_USB_Audio2
+file 201326608 audio-samplesKick909.wav app.configFolder'AudioNotify.aiff'
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1audioplay2.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p1hand_r:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1hand_r:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1audioplay3.chop
+
+5
+1
+
+
+------------------------------
+
+project1audioplay3.n
+
+CHOP:audioplay
+tile 1875 -1000 188 153
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay3.parm
+
+?
+specifydevice 67108864 on
+device 67108864 0.0.0.00000000.3cb19153-91a2-4ddc-a686-bce4218a2666Lautsprecher_Focusrite_USB_Audio2
+file 201326608 audio-samplesCHCR78.wav app.configFolder'AudioNotify.aiff'
+mode 67108864 trigger
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1audioplay3.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p1pelvis:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1pelvis:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1audioplay4.chop
+
+5
+1
+
+
+------------------------------
+
+project1audioplay4.n
+
+CHOP:audioplay
+tile 1875 -150 188 120
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay4.parm
+
+?
+specifydevice 67108864 on
+device 67108864 0.0.0.00000000.3cb19153-91a2-4ddc-a686-bce4218a2666Lautsprecher_Focusrite_USB_Audio2
+file 201326608 audio-samplesKick909.wav app.configFolder'AudioNotify.aiff'
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1audioplay4.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p2hand_r:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p2hand_r:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1audioplay5.chop
+
+5
+1
+
+
+------------------------------
+
+project1audioplay5.n
+
+CHOP:audioplay
+tile 1875 -700 188 153
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1audioplay5.parm
+
+?
+specifydevice 67108864 on
+device 67108864 0.0.0.00000000.3cb19153-91a2-4ddc-a686-bce4218a2666Lautsprecher_Focusrite_USB_Audio2
+file 201326608 audio-samplesOHCR78.wav app.configFolder'AudioNotify.aiff'
+mode 67108864 trigger
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1audioplay5.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p2hand_l:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p2hand_l:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1comp1.n
+
+TOP:comp
+tile 1375 275 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	edge1
+1 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1comp1.parm
+
+?
+operand 67108864 average
+?
+
+
+------------------------------
+
+project1edge1.n
+
+TOP:edge
+tile 1125 550 302 169
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1edge1.parm
+
+?
+strength 67108913 1.71 op'trigger2''p1hand_r:depthv'
+edgecolorr 67108881 1 op'trigger2''p1hand_r:depthv'
+edgecolorg 67108864 1
+edgecolorb 67108864 1
+edgecolora 67108864 1
+alphaoutputmenu 67108864 one
+?
+
+
+------------------------------
+
+project1kinectazure1.n
+
+TOP:kinectazure
+tile 125 350 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1kinectazure1.parm
+
+?
+sensor 67108864 V100061521531200000615215312
+modelpath 201326609 "" "app.configFolder  "Modelsdnn_model_2_0_op11.onnx""
+mirrorimage 67108864 on
+?
+
+
+------------------------------
+
+project1kinectazure2.chop
+
+5
+1
+
+
+------------------------------
+
+project1kinectazure2.n
+
+CHOP:kinectazure
+tile -125 -325 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1kinectazure2.parm
+
+?
+top 67108864 kinectazure1
+maxplayers 67108864 2
+worldspace 67108864 off
+depthspace 67108864 on
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1kinectazure2.ts
+
+65538
+132
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+frame
+timestamp
+p1id
+p1pelvis:depthu
+p1pelvis:depthv
+p1spine_navel:depthu
+p1spine_navel:depthv
+p1spine_chest:depthu
+p1spine_chest:depthv
+p1neck:depthu
+p1neck:depthv
+p1clavicle_l:depthu
+p1clavicle_l:depthv
+p1shoulder_l:depthu
+p1shoulder_l:depthv
+p1elbow_l:depthu
+p1elbow_l:depthv
+p1wrist_l:depthu
+p1wrist_l:depthv
+p1hand_l:depthu
+p1hand_l:depthv
+p1handtip_l:depthu
+p1handtip_l:depthv
+p1thumb_l:depthu
+p1thumb_l:depthv
+p1clavicle_r:depthu
+p1clavicle_r:depthv
+p1shoulder_r:depthu
+p1shoulder_r:depthv
+p1elbow_r:depthu
+p1elbow_r:depthv
+p1wrist_r:depthu
+p1wrist_r:depthv
+p1hand_r:depthu
+p1hand_r:depthv
+p1handtip_r:depthu
+p1handtip_r:depthv
+p1thumb_r:depthu
+p1thumb_r:depthv
+p1hip_l:depthu
+p1hip_l:depthv
+p1knee_l:depthu
+p1knee_l:depthv
+p1ankle_l:depthu
+p1ankle_l:depthv
+p1foot_l:depthu
+p1foot_l:depthv
+p1hip_r:depthu
+p1hip_r:depthv
+p1knee_r:depthu
+p1knee_r:depthv
+p1ankle_r:depthu
+p1ankle_r:depthv
+p1foot_r:depthu
+p1foot_r:depthv
+p1head:depthu
+p1head:depthv
+p1nose:depthu
+p1nose:depthv
+p1eye_l:depthu
+p1eye_l:depthv
+p1ear_l:depthu
+p1ear_l:depthv
+p1eye_r:depthu
+p1eye_r:depthv
+p1ear_r:depthu
+p1ear_r:depthv
+p2id
+p2pelvis:depthu
+p2pelvis:depthv
+p2spine_navel:depthu
+p2spine_navel:depthv
+p2spine_chest:depthu
+p2spine_chest:depthv
+p2neck:depthu
+p2neck:depthv
+p2clavicle_l:depthu
+p2clavicle_l:depthv
+p2shoulder_l:depthu
+p2shoulder_l:depthv
+p2elbow_l:depthu
+p2elbow_l:depthv
+p2wrist_l:depthu
+p2wrist_l:depthv
+p2hand_l:depthu
+p2hand_l:depthv
+p2handtip_l:depthu
+p2handtip_l:depthv
+p2thumb_l:depthu
+p2thumb_l:depthv
+p2clavicle_r:depthu
+p2clavicle_r:depthv
+p2shoulder_r:depthu
+p2shoulder_r:depthv
+p2elbow_r:depthu
+p2elbow_r:depthv
+p2wrist_r:depthu
+p2wrist_r:depthv
+p2hand_r:depthu
+p2hand_r:depthv
+p2handtip_r:depthu
+p2handtip_r:depthv
+p2thumb_r:depthu
+p2thumb_r:depthv
+p2hip_l:depthu
+p2hip_l:depthv
+p2knee_l:depthu
+p2knee_l:depthv
+p2ankle_l:depthu
+p2ankle_l:depthv
+p2foot_l:depthu
+p2foot_l:depthv
+p2hip_r:depthu
+p2hip_r:depthv
+p2knee_r:depthu
+p2knee_r:depthv
+p2ankle_r:depthu
+p2ankle_r:depthv
+p2foot_r:depthu
+p2foot_r:depthv
+p2head:depthu
+p2head:depthv
+p2nose:depthu
+p2nose:depthv
+p2eye_l:depthu
+p2eye_l:depthv
+p2ear_l:depthu
+p2ear_l:depthv
+p2eye_r:depthu
+p2eye_r:depthv
+p2ear_r:depthu
+p2ear_r:depthv
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  132
+   
+      name  frame
+      data_rle  52420 
+   
+   
+      name  timestamp
+      data_rle  1.04007e09 
+   
+   
+      name  p1id
+      data_rle  2 
+   
+   
+      name  p1pelvis:depthu
+      data_rle  0.315885 
+   
+   
+      name  p1pelvis:depthv
+      data_rle  0.365513 
+   
+   
+      name  p1spine_navel:depthu
+      data_rle  0.31609 
+   
+   
+      name  p1spine_navel:depthv
+      data_rle  0.438108 
+   
+   
+      name  p1spine_chest:depthu
+      data_rle  0.305392 
+   
+   
+      name  p1spine_chest:depthv
+      data_rle  0.4927 
+   
+   
+      name  p1neck:depthu
+      data_rle  0.279152 
+   
+   
+      name  p1neck:depthv
+      data_rle  0.560372 
+   
+   
+      name  p1clavicle_l:depthu
+      data_rle  0.29455 
+   
+   
+      name  p1clavicle_l:depthv
+      data_rle  0.547256 
+   
+   
+      name  p1shoulder_l:depthu
+      data_rle  0.336135 
+   
+   
+      name  p1shoulder_l:depthv
+      data_rle  0.508828 
+   
+   
+      name  p1elbow_l:depthu
+      data_rle  0.312449 
+   
+   
+      name  p1elbow_l:depthv
+      data_rle  0.409249 
+   
+   
+      name  p1wrist_l:depthu
+      data_rle  0.225684 
+   
+   
+      name  p1wrist_l:depthv
+      data_rle  0.396287 
+   
+   
+      name  p1hand_l:depthu
+      data_rle  0.190704 
+   
+   
+      name  p1hand_l:depthv
+      data_rle  0.407776 
+   
+   
+      name  p1handtip_l:depthu
+      data_rle  0.156614 
+   
+   
+      name  p1handtip_l:depthv
+      data_rle  0.430327 
+   
+   
+      name  p1thumb_l:depthu
+      data_rle  0.182886 
+   
+   
+      name  p1thumb_l:depthv
+      data_rle  0.43204 
+   
+   
+      name  p1clavicle_r:depthu
+      data_rle  0.273447 
+   
+   
+      name  p1clavicle_r:depthv
+      data_rle  0.550431 
+   
+   
+      name  p1shoulder_r:depthu
+      data_rle  0.239912 
+   
+   
+      name  p1shoulder_r:depthv
+      data_rle  0.531817 
+   
+   
+      name  p1elbow_r:depthu
+      data_rle  0.199401 
+   
+   
+      name  p1elbow_r:depthv
+      data_rle  0.491964 
+   
+   
+      name  p1wrist_r:depthu
+      data_rle  0.13236 
+   
+   
+      name  p1wrist_r:depthv
+      data_rle  0.449354 
+   
+   
+      name  p1hand_r:depthu
+      data_rle  0.115061 
+   
+   
+      name  p1hand_r:depthv
+      data_rle  0.44165 
+   
+   
+      name  p1handtip_r:depthu
+      data_rle  0.139294 
+   
+   
+      name  p1handtip_r:depthv
+      data_rle  0.455257 
+   
+   
+      name  p1thumb_r:depthu
+      data_rle  0.124783 
+   
+   
+      name  p1thumb_r:depthv
+      data_rle  0.48777 
+   
+   
+      name  p1hip_l:depthu
+      data_rle  0.343695 
+   
+   
+      name  p1hip_l:depthv
+      data_rle  0.362825 
+   
+   
+      name  p1knee_l:depthu
+      data_rle  0.234472 
+   
+   
+      name  p1knee_l:depthv
+      data_rle  0.33141 
+   
+   
+      name  p1ankle_l:depthu
+      data_rle  0.213306 
+   
+   
+      name  p1ankle_l:depthv
+      data_rle  0.17726 
+   
+   
+      name  p1foot_l:depthu
+      data_rle  0.176425 
+   
+   
+      name  p1foot_l:depthv
+      data_rle  0.107794 
+   
+   
+      name  p1hip_r:depthu
+      data_rle  0.291928 
+   
+   
+      name  p1hip_r:depthv
+      data_rle  0.367891 
+   
+   
+      name  p1knee_r:depthu
+      data_rle  0.247317 
+   
+   
+      name  p1knee_r:depthv
+      data_rle  0.301228 
+   
+   
+      name  p1ankle_r:depthu
+      data_rle  0.26889 
+   
+   
+      name  p1ankle_r:depthv
+      data_rle  0.154891 
+   
+   
+      name  p1foot_r:depthu
+      data_rle  0.26737 
+   
+   
+      name  p1foot_r:depthv
+      data_rle  0.0859517 
+   
+   
+      name  p1head:depthu
+      data_rle  0.26589 
+   
+   
+      name  p1head:depthv
+      data_rle  0.58389 
+   
+   
+      name  p1nose:depthu
+      data_rle  0.213754 
+   
+   
+      name  p1nose:depthv
+      data_rle  0.537515 
+   
+   
+      name  p1eye_l:depthu
+      data_rle  0.220307 
+   
+   
+      name  p1eye_l:depthv
+      data_rle  0.548273 
+   
+   
+      name  p1ear_l:depthu
+      data_rle  0.267494 
+   
+   
+      name  p1ear_l:depthv
+      data_rle  0.57006 
+   
+   
+      name  p1eye_r:depthu
+      data_rle  0.209773 
+   
+   
+      name  p1eye_r:depthv
+      data_rle  0.560581 
+   
+   
+      name  p1ear_r:depthu
+      data_rle  0.233298 
+   
+   
+      name  p1ear_r:depthv
+      data_rle  0.614612 
+   
+   
+      name  p2id
+      data_rle  0 
+   
+   
+      name  p2pelvis:depthu
+      data_rle  0 
+   
+   
+      name  p2pelvis:depthv
+      data_rle  0 
+   
+   
+      name  p2spine_navel:depthu
+      data_rle  0 
+   
+   
+      name  p2spine_navel:depthv
+      data_rle  0 
+   
+   
+      name  p2spine_chest:depthu
+      data_rle  0 
+   
+   
+      name  p2spine_chest:depthv
+      data_rle  0 
+   
+   
+      name  p2neck:depthu
+      data_rle  0 
+   
+   
+      name  p2neck:depthv
+      data_rle  0 
+   
+   
+      name  p2clavicle_l:depthu
+      data_rle  0 
+   
+   
+      name  p2clavicle_l:depthv
+      data_rle  0 
+   
+   
+      name  p2shoulder_l:depthu
+      data_rle  0 
+   
+   
+      name  p2shoulder_l:depthv
+      data_rle  0 
+   
+   
+      name  p2elbow_l:depthu
+      data_rle  0 
+   
+   
+      name  p2elbow_l:depthv
+      data_rle  0 
+   
+   
+      name  p2wrist_l:depthu
+      data_rle  0 
+   
+   
+      name  p2wrist_l:depthv
+      data_rle  0 
+   
+   
+      name  p2hand_l:depthu
+      data_rle  0 
+   
+   
+      name  p2hand_l:depthv
+      data_rle  0 
+   
+   
+      name  p2handtip_l:depthu
+      data_rle  0 
+   
+   
+      name  p2handtip_l:depthv
+      data_rle  0 
+   
+   
+      name  p2thumb_l:depthu
+      data_rle  0 
+   
+   
+      name  p2thumb_l:depthv
+      data_rle  0 
+   
+   
+      name  p2clavicle_r:depthu
+      data_rle  0 
+   
+   
+      name  p2clavicle_r:depthv
+      data_rle  0 
+   
+   
+      name  p2shoulder_r:depthu
+      data_rle  0 
+   
+   
+      name  p2shoulder_r:depthv
+      data_rle  0 
+   
+   
+      name  p2elbow_r:depthu
+      data_rle  0 
+   
+   
+      name  p2elbow_r:depthv
+      data_rle  0 
+   
+   
+      name  p2wrist_r:depthu
+      data_rle  0 
+   
+   
+      name  p2wrist_r:depthv
+      data_rle  0 
+   
+   
+      name  p2hand_r:depthu
+      data_rle  0 
+   
+   
+      name  p2hand_r:depthv
+      data_rle  0 
+   
+   
+      name  p2handtip_r:depthu
+      data_rle  0 
+   
+   
+      name  p2handtip_r:depthv
+      data_rle  0 
+   
+   
+      name  p2thumb_r:depthu
+      data_rle  0 
+   
+   
+      name  p2thumb_r:depthv
+      data_rle  0 
+   
+   
+      name  p2hip_l:depthu
+      data_rle  0 
+   
+   
+      name  p2hip_l:depthv
+      data_rle  0 
+   
+   
+      name  p2knee_l:depthu
+      data_rle  0 
+   
+   
+      name  p2knee_l:depthv
+      data_rle  0 
+   
+   
+      name  p2ankle_l:depthu
+      data_rle  0 
+   
+   
+      name  p2ankle_l:depthv
+      data_rle  0 
+   
+   
+      name  p2foot_l:depthu
+      data_rle  0 
+   
+   
+      name  p2foot_l:depthv
+      data_rle  0 
+   
+   
+      name  p2hip_r:depthu
+      data_rle  0 
+   
+   
+      name  p2hip_r:depthv
+      data_rle  0 
+   
+   
+      name  p2knee_r:depthu
+      data_rle  0 
+   
+   
+      name  p2knee_r:depthv
+      data_rle  0 
+   
+   
+      name  p2ankle_r:depthu
+      data_rle  0 
+   
+   
+      name  p2ankle_r:depthv
+      data_rle  0 
+   
+   
+      name  p2foot_r:depthu
+      data_rle  0 
+   
+   
+      name  p2foot_r:depthv
+      data_rle  0 
+   
+   
+      name  p2head:depthu
+      data_rle  0 
+   
+   
+      name  p2head:depthv
+      data_rle  0 
+   
+   
+      name  p2nose:depthu
+      data_rle  0 
+   
+   
+      name  p2nose:depthv
+      data_rle  0 
+   
+   
+      name  p2eye_l:depthu
+      data_rle  0 
+   
+   
+      name  p2eye_l:depthv
+      data_rle  0 
+   
+   
+      name  p2ear_l:depthu
+      data_rle  0 
+   
+   
+      name  p2ear_l:depthv
+      data_rle  0 
+   
+   
+      name  p2eye_r:depthu
+      data_rle  0 
+   
+   
+      name  p2eye_r:depthv
+      data_rle  0 
+   
+   
+      name  p2ear_r:depthu
+      data_rle  0 
+   
+   
+      name  p2ear_r:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1limit1.n
+
+CHOP:limit
+tile 925 -425 188 111
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1limit1.parm
+
+?
+type 67108864 loop
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relzero
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1limit2.n
+
+CHOP:limit
+tile 925 25 188 111
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1limit2.parm
+
+?
+type 67108864 loop
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relstart
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1limit3.n
+
+CHOP:limit
+tile 900 -950 188 111
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1limit3.parm
+
+?
+pageindex 67108864 1
+type 67108864 clamp
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relzero
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1limit4.n
+
+CHOP:limit
+tile 925 -125 188 111
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1limit4.parm
+
+?
+type 67108864 loop
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relstart
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1limit5.n
+
+CHOP:limit
+tile 925 -675 188 111
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1limit5.parm
+
+?
+type 67108864 loop
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relzero
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math1.n
+
+CHOP:math
+tile 625 25 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math1.parm
+
+?
+fromrange1 67108864 0.45
+fromrange2 67108864 0.2
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math2.n
+
+CHOP:math
+tile 675 -425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math2.parm
+
+?
+pageindex 67108864 2
+fromrange1 67108864 0.45
+fromrange2 67108864 0.2
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math3.n
+
+CHOP:math
+tile 650 -950 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math3.parm
+
+?
+pageindex 67108864 2
+fromrange1 67108864 0.41
+fromrange2 67108864 0.39
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math4.n
+
+CHOP:math
+tile 625 -125 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math4.parm
+
+?
+pageindex 67108864 2
+fromrange1 67108864 0.6
+fromrange2 67108864 0.1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math5.n
+
+CHOP:math
+tile 675 -675 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math5.parm
+
+?
+pageindex 67108864 2
+fromrange1 67108864 0.45
+fromrange2 67108864 0.2
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1mono1.n
+
+TOP:mono
+tile 450 525 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1out1.n
+
+TOP:out
+tile 2150 200 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	BG
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1out1.parm
+
+?
+label 201326609 "" me.name
+?
+
+
+------------------------------
+
+project1select1.n
+
+CHOP:select
+tile 325 0 231 135
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select1.parm
+
+?
+channames 67108864 p1hand_r:depthv
+digits 67108864 1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1select2.n
+
+CHOP:select
+tile 350 -400 243 184
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select2.parm
+
+?
+channames 67108864 p1hand_l:depthv
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1select3.n
+
+CHOP:select
+tile 325 -1000 244 184
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select3.parm
+
+?
+channames 67108864 p1pelvis:depthv
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1select4.n
+
+CHOP:select
+tile 325 -150 231 135
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select4.parm
+
+?
+channames 67108864 p2hand_r:depthv
+digits 67108864 1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1select5.n
+
+CHOP:select
+tile 350 -650 243 184
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select5.parm
+
+?
+channames 67108864 p2hand_l:depthv
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1text1.n
+
+DAT:text
+tile -1100 663 2185 337
+flags   viewer 1 activate on parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+project1text1.parm
+
+?
+language 67108864 text
+?
+
+
+------------------------------
+
+project1text1.text
+
+2
+This Patch Tracks the Vertical positions of the Hands in a very simplified way
+It's set to recognize only one person in front of the camera
+the purpose is to have a basic understanding of how it can work.
+the person needs to sit down on a chair and in the Math CHOP next to each input the range of movement can be set.
+The sample files are being played directly in TD and they are in the same folder of the patch.
+there is nothing going on visually.
+
+------------------------------
+
+project1trigger1.chop
+
+5
+1
+
+
+------------------------------
+
+project1trigger1.n
+
+CHOP:trigger
+tile 1575 -450 188 139
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	limit1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1trigger1.parm
+
+?
+attack 67108864 0
+ashape 67108864 linear
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+rshape 67108864 linear
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1trigger1.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+1735
+60
+p1hand_l:depthv
+0
+0
+0
+0
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1hand_l:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1trigger2.chop
+
+5
+1
+
+
+------------------------------
+
+project1trigger2.n
+
+CHOP:trigger
+tile 1575 25 188 99
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	limit2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1trigger2.parm
+
+?
+attack 67108864 0
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+release 67108864 0
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1trigger2.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+1732
+60
+p1hand_r:depthv
+0
+0
+0
+0
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1hand_r:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1trigger3.chop
+
+5
+1
+
+
+------------------------------
+
+project1trigger3.n
+
+CHOP:trigger
+tile 1550 -975 188 139
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	limit3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1trigger3.parm
+
+?
+attack 67108864 0
+ashape 67108864 linear
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+rshape 67108864 linear
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1trigger3.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p1pelvis:depthv
+1
+0
+0
+1
+0
+17731
+0
+0
+-5.74036e-27
+6.71222e-43
+1
+0
+0
+4
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p1pelvis:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1trigger4.chop
+
+5
+1
+
+
+------------------------------
+
+project1trigger4.n
+
+CHOP:trigger
+tile 1575 -125 188 99
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	limit4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1trigger4.parm
+
+?
+attack 67108864 0
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+release 67108864 0
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1trigger4.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p2hand_r:depthv
+1
+0
+0
+1
+0
+32258
+0
+0
+0
+-0.5
+1
+0
+0
+4
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p2hand_r:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1trigger5.chop
+
+5
+1
+
+
+------------------------------
+
+project1trigger5.n
+
+CHOP:trigger
+tile 1575 -700 188 139
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	limit5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1trigger5.parm
+
+?
+attack 67108864 0
+ashape 67108864 linear
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+rshape 67108864 linear
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1trigger5.ts
+
+65538
+1
+492
+491
+0
+0
+1
+1
+0
+492
+492
+0
+60
+p2hand_l:depthv
+1
+0
+0
+1
+0
+32901
+0
+0
+0
+0
+1
+0
+0
+4
+
+   rate  60
+   start  492
+   tracklength  1
+   tracks  1
+   
+      name  p2hand_l:depthv
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1.n
+
+COMP:container
+v 584.63 594.187 0.1275
+tile 200 100 400 244
+flags   viewer 1 parlanguage 0
+color 0.56 0.56 0.56 
+end
+
+
+------------------------------
+
+project1.panel
+
+1
+3
+10
+u 0.54
+v 0.720528
+trueu 0.54
+truev 0.720528
+rollu 0.970289
+rollv 1
+screenw 1280
+screenh 720
+screenwm 1280
+screenhm 720
+
+
+------------------------------
+
+project1.parm
+
+?
+pageindex 67108864 1
+w 67108864 1280
+h 67108864 720
+resizecomp 201326609 "" me
+repocomp 201326609 "" me
+top 67108864 .out1
+topsmoothness 67108864 usetop
+borderover 67108864 off
+parentshortcut 67108864 Project
+?
+
+
+------------------------------
+

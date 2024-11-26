@@ -1,0 +1,8 @@
+?
+rendertop 0 render1
+pickingby 0 parameters
+picku 17 0.758 op('UV1')['p1/hand_l:depthu']
+pickv 17 0.275 op('UV1')['p1/hand_l:depthv']
+callbacks 0 renderpick2_callbacks
+exportmethod 0 datname
+?

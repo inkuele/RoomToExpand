@@ -1,0 +1,5 @@
+?
+file 16 audio-samples/Kick909.wav app.configFolder+'/Audio/Notify.aiff'
+trigger 49 0 op('null1')['chan1']
+timeslice 0 on
+?

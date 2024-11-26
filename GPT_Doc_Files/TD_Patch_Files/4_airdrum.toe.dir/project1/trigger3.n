@@ -1,0 +1,9 @@
+CHOP:trigger
+tile 1550 -975 188 139
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	limit3
+}
+color 0.55 0.55 0.55 
+end

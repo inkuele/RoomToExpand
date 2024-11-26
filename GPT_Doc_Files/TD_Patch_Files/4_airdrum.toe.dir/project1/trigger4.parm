@@ -1,0 +1,10 @@
+?
+attack 67108864 0
+decay 67108864 0
+dshape 67108864 linear
+sustain 67108864 0
+release 67108864 0
+rate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

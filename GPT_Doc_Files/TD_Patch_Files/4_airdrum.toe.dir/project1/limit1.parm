@@ -1,0 +1,11 @@
+?
+type 67108864 loop
+positive 67108864 on
+quantvalue 67108864 floor
+vstep 67108864 1
+voffset 67108864 1
+quantindex 67108864 relzero
+istep 67108864 1
+ioffset 67108864 -1
+autoexportroot 201326609 "" parent()
+?

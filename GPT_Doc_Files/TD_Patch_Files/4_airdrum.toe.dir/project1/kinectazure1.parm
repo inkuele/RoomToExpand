@@ -1,0 +1,5 @@
+?
+sensor 67108864 V1|||000615215312|||0|||0|||000615215312
+modelpath 201326609 "" "app.configFolder + \"/Models/dnn_model_2_0_op11.onnx\""
+mirrorimage 67108864 on
+?

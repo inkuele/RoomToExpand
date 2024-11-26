@@ -1,0 +1,9 @@
+TOP:mono
+tile 500 425 130 90
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	blur1
+}
+color 0.55 0.55 0.55 
+end

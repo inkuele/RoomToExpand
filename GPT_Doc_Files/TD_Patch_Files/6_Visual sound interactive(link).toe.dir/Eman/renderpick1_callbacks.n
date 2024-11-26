@@ -1,0 +1,7 @@
+DAT:text
+tile -213 -931 107 101
+flags =  viewer 1 activate on parlanguage 0
+color 0.55 0.55 0.55 
+dock renderpick1
+view 8 0 1 1 1 0 -4.32424 0 0 1 1
+end

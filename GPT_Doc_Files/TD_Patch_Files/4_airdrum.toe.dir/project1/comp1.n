@@ -1,0 +1,10 @@
+TOP:comp
+tile 1375 275 130 90
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	edge1
+1 	mono1
+}
+color 0.55 0.55 0.55 
+end

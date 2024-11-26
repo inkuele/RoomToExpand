@@ -1,0 +1,7 @@
+?
+netaddress 0 141.23.183.56
+port 0 4000
+format 0 sample
+sendrate 0 off
+timeslice 0 on
+?

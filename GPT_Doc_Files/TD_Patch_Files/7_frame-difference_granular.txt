@@ -1,0 +1,2134 @@
+.application
+
+
+Desk..
+ layout 
+desk -c  
+desk -n pane1 
+
+pane1
+desk -p project1 pane1
+desk -t neteditor pane1
+desk -k 0 pane1
+neteditor -c 0 -e 0 -G 0.75 -o 0 -r 1 -P 0.8 -s 0 -w 0 -x 0 -t 1 -d 1 -g 0 -p pane1
+
+browser off
+winplacement ontop0 modeauto posx0 posy0 sizex1024 sizey768 enable1 perform.pathperform perform.start0
+
+
+------------------------------
+
+.build
+
+version 099
+build 2023.11760
+time Mon Oct  7 11:59:39 2024
+osname Windows
+osversion 10
+
+
+------------------------------
+
+.grps
+
+-2
+0
+
+
+------------------------------
+
+.parm
+
+?
+?
+
+
+------------------------------
+
+.root
+
+v -7103.15 -4119.07 19.3238
+end
+
+
+------------------------------
+
+.start
+
+cookrate 60
+clock -f 1 -s 1 -o 0 -w 0
+realtime on
+viewers off
+expectednodes 82 37215
+resetaudioondevicechange off
+
+
+------------------------------
+
+localmapsmaster.n
+
+COMP:base
+v 408.5 324 1
+tile 210 140 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsreplicator1.n
+
+COMP:replicator
+tile 10 140 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsreplicator1.parm
+
+?
+repsuffixstart 67108864 0
+template 67108864 select2
+namefromtable 67108864 colbyname
+colname 67108864 id
+opprefix 67108864 id
+master 67108864 master
+destination 201326609 "" me.parent
+callbacks 67108864 replicator1_callbacks
+?
+
+
+------------------------------
+
+localmapsreplicator1.replicator
+
+3
+0
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.n
+
+DAT:text
+tile 10 -20 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+dock replicator1
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.parm
+
+?
+defaultreadencoding 67108864 cp1252
+?
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.text
+
+2
+ me - this DAT
+ 
+ comp - the replicator component which is cooking
+ allOps - a list of all replicants, created or existing
+ newOps - the subset that were just created
+ template - table DAT specifying the replicator attributes
+ master - the master operator
+
+
+def replicatecomp, allOps, newOps, template, master:
+
+	for c in newOps:
+		c.display  True
+		c.render  True
+		c.par.display  1
+		c.par.clone  comp.par.master
+	
+		c.par.clone.expr  "op'..mididevice'me.digits, 'definition'  'mapmaster1'"
+
+		pass
+
+	return
+
+
+------------------------------
+
+localmapsselect1.n
+
+DAT:select
+tile -300 160 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect1.parm
+
+?
+dat 67108864 localmididevice
+rowindexend 201326609 0 "me.inputs0.numRows - 1"
+rowexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+extractcols 67108864 bynames
+colindexend 201326609 4 "me.inputs0.numCols - 1"
+colnames 67108864 "id definition"
+colexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+?
+
+
+------------------------------
+
+localmapsselect2.n
+
+DAT:select
+tile -150 160 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect2.parm
+
+?
+extractrows 67108864 bynames
+rowindexend 201326609 0 "me.inputs0.numRows - 1"
+rownames 67108864 ?
+rowexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+fromcol 67108864 1
+colindexend 201326609 1 "me.inputs0.numCols - 1"
+colexpr 201326609 "" "re.match'.',me.inputCell.val ! None"
+?
+
+
+------------------------------
+
+localmaps.n
+
+COMP:base
+v 309.531 186.79 0.93596
+tile 250 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaps.parm
+
+?
+opviewer 67108864 .id1
+?
+
+
+------------------------------
+
+localmaster_beat.beat
+
+1
+
+
+------------------------------
+
+localmaster_beat.chop
+
+5
+1
+
+
+------------------------------
+
+localmaster_beat.n
+
+CHOP:beat
+tile 50 -125 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaster_beat.parm
+
+?
+updateglobal 67108864 on
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+localmidi.lod
+
+4W.buildversion 099
+build 2023.11760
+time Mon Oct  7 11:59:40 2024
+osname Windows
+osversion 10
+4	Ydevice.nDAT:table
+tile 50 -130 644 126
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4device.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 1
+cols 67108864 5
+?
+4
+_device.table1
+idindevice	outdevice
+definitionchannel4rtemplate.nCOMP:base
+v 262.219 202.09 0.818811
+tile 310 50 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4template.parm?
+opviewer 67108864 .icon
+?
+64	template4iicon.nTOP:null
+tile 170 0 130 67
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	text1
+
+color 0.55 0.55 0.55 
+end
+4Stext1.nTOP:text
+tile 0 0 130 67
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Dtext1.parm?
+text 67108864 "User Map"
+legacyparsing 67108864 on
+leadingzero 67108864 off
+chopvaluereplace 67108864 on
+legacyfontselection 67108864 on
+dispmethod 67108864 polygon
+fontsizex 67108864 24.6
+fontsizexunit 67108864 pixels
+fontsizeyunit 67108864 pixels
+resolutionw 67108864 200
+resolutionh 67108864 100
+resmult 67108864 off
+?
+4
+Xbuttons.nDAT:table
+tile 350 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+abuttons.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 16
+cols 67108864 3
+?
+4buttons.table1
+b1b? 41 7fb? 41 00b2b? 42 7fb? 42 00b3b? 43 7fb? 43 00b4b? 44 7fb? 44 00b5b? 45 7fb? 45 00b6b? 46 7fb? 46 00b7b? 47 7fb? 47 00b8b? 48 7fb? 48 00b9b? 49 7fb? 49 00b10b? 4a 7fb? 4a 00b11b? 4b 7fb? 4b 00b12b? 4c 7fb? 4c 00b13b? 4d 7fb? 4d 00b14b? 4e 7fb? 4e 00b15b? 4f 7fb? 4f 00b16b? 50 7fb? 50 004
+Xsliders.nDAT:table
+tile 170 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+asliders.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 16
+cols 67108864 2
+?
+4sliders.table1
+s1b? 51 --s2b? 52 --s3b? 53 --s4b? 54 --s5b? 55 --s6b? 56 --s7b? 57 --s8b? 58 --s9b? 01 --s10b? 02 --s11b? 03 --s12b? 04 --s13b? 05 --s14b? 06 --s15b? 07 --s16b? 08 --4
+Vattributes.nDAT:table
+tile 0 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4attributes.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 1
+cols 67108864 2
+?
+46attributes.table1
+nameUser Device Map4
+zmapmaster1.nCOMP:base
+v 86.156 363.08 1.24945
+tile 520 0 160 130
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+64mapmaster14out1.nCHOP:out
+tile 250 25 130 90
+flags   current on viewer 1 parlanguage 0
+inputs
+
+0 	midiinmap
+
+color 0.55 0.55 0.55 
+view 0 6 0 0 0 0 0 0
+end
+4
+fout1.parm?
+label 201326609 "" me.name
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4
+wbuttons.nCHOP:null
+tile 250 -210 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_buttons
+
+color 0.55 0.55 0.55 
+end
+4
+,buttons.parm?
+autoexportroot 201326609 "" me.parent
+?
+4
+midiout.nCHOP:midiout
+tile 590 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+midiout.parm?
+id 67108881 1 parent.digits
+timecodeop 201326609 "" me.time.timecode
+timeslice 67108864 on
+autoexportroot 201326609 "" me.parent
+?
+4
+midiout.chop5
+1
+4imidiout.ts65538
+0
+325
+324
+0
+0
+1
+1
+0
+325
+325
+0
+60
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  0
+
+
+4
+wsliders.nCHOP:null
+tile 250 -100 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_sliders
+
+color 0.55 0.55 0.55 
+end
+4
+,sliders.parm?
+autoexportroot 201326609 "" me.parent
+?
+4chopexec1.nDAT:chopexec
+tile 420 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0.388199 0 0 1 1
+end
+4hchopexec1.parm?
+fromop 201326609 "" me.parent
+chop 67108864 "sliders buttons"
+defaultreadencoding 67108864 cp1252
+?
+4fchopexec1.text2
+K me - this DAT
+ 
+ channel - the Channel object which has changed
+ sampleIndex - the index of the changed sample
+ val - the numeric value of the changed sample
+ prev - the previous sample value
+ 
+ Make sure the corresponding toggle is enabled in the CHOP Execute DAT.
+
+ use the methods of midiout, see midioutCHOP Class help
+ For example;
+ maptable  op'localmididevice'
+ ch  maptableparent.digits, 'channel'
+ op'midiout'.sendNoteOnch, index, val
+ op'midiout'.sendNoteOffch, index, val
+ op'midiout'.sendControlch, index, val
+
+
+def offToOnchannel, sampleIndex, val, prev:
+	return
+
+def whileOnchannel, sampleIndex, val, prev:
+	return
+
+def onToOffchannel, sampleIndex, val, prev:
+	return
+
+def whileOffchannel, sampleIndex, val, prev:
+	return
+
+def valueChangechannel, sampleIndex, val, prev:
+	return
+	4midiinmap.nCHOP:midiinmap
+tile 50 25 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midiinmap.parm?
+id 67108913 OPD parent.digits
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4collect_buttons.nCHOP:constant
+tile 50 -210 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4jcollect_buttons.parm?
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+4collect_sliders.nCHOP:constant
+tile 50 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4jcollect_sliders.parm?
+rate 201326608 60 me.time.rate
+exportmethod 67108864 autoname
+autoexportroot 201326609 "" me.parent
+?
+554Ymidi_inputs.nDAT:table
+tile 200 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midi_inputs.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 0
+cols 67108864 0
+?
+4midi_inputs.table1
+4userdevices.nCOMP:base
+v 578.908 181.843 0.43217
+tile 800 50 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Xmidi_outputs.nDAT:table
+tile 50 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midi_outputs.parm?
+defaultreadencoding 67108864 cp1252
+removeblank 67108864 on
+rows 67108864 0
+cols 67108864 0
+?
+47midi_outputs.table1
+Microsoft GS Wavetable Synth
+
+------------------------------
+
+localmidi.n
+
+COMP:base
+v 144.459 286.388 0.840696
+tile 50 -300 160 130
+flags   current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmidi.parm
+
+?
+opviewer 67108864 .device
+loadondemand 67108864 on
+?
+
+
+------------------------------
+
+localset_variables.n
+
+DAT:table
+tile 25 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localset_variables.table
+
+1
+TOENAMEframe-difference_granular.6.toe
+
+------------------------------
+
+localshortcuts.n
+
+DAT:filein
+tile 325 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localshortcuts.parm
+
+?
+file 67108881 "" "app.configFolder  'PanelShortcuts.txt'"
+converttable 67108864 on
+?
+
+
+------------------------------
+
+localtime.n
+
+COMP:time
+tile 450 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localtime.parm
+
+?
+rate 67108881 60 cookRate
+clone 67108864 syslocaltime
+?
+
+
+------------------------------
+
+localvariables.n
+
+DAT:null
+tile 175 0 130 90
+flags   parlanguage 0
+inputs
+
+0 	set_variables
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.n
+
+COMP:base
+tile -200 -725 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.parm
+
+?
+opviewer 67108864 .variables
+?
+
+
+------------------------------
+
+perform.n
+
+COMP:window
+comment "Perform Mode configuration:nPress F1 to enter Perform Mode, ESC to exit"
+tile -200 40 160 130
+flags   picked on current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+perform.parm
+
+?
+winop 67108864 project1
+title 201326609 "" me
+monitor 67108864 1
+justifyh 67108864 center
+justifyv 67108864 center
+borders 67108864 off
+?
+
+
+------------------------------
+
+project1analyze1.n
+
+TOP:analyze
+tile 500 -200 130 105
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	thresh1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1analyze1.parm
+
+?
+op 67108864 sum
+?
+
+
+------------------------------
+
+project1blur1.n
+
+TOP:blur
+tile 175 -50 130 97
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	diff1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1blur1.parm
+
+?
+size 67108864 31
+?
+
+
+------------------------------
+
+project1blur2.n
+
+TOP:blur
+tile 475 250 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	thresh1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1blur2.parm
+
+?
+preshrink 67108864 5
+size 67108864 6
+?
+
+
+------------------------------
+
+project1cache1.n
+
+TOP:cache
+tile -75 200 130 97
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	level1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1cache1.parm
+
+?
+cachesize 67108864 50
+step 67108864 3
+?
+
+
+------------------------------
+
+project1comp1.n
+
+TOP:comp
+tile 650 0 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	thresh1
+1 	blur2
+2 	level1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1comp1.parm
+
+?
+operand 67108864 add
+?
+
+
+------------------------------
+
+project1diff1.n
+
+TOP:diff
+tile 0 -50 130 97
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	cache1
+1 	level1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1filter1.chop
+
+5
+1
+
+
+------------------------------
+
+project1filter1.n
+
+CHOP:filter
+tile 1025 -175 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math1
+
+color 0.55 0.55 0.55 
+view 5 -1 1 0.034375 -1.5 1.5 4 2 10648 10 0
+end
+
+
+------------------------------
+
+project1filter1.parm
+
+?
+width 67108864 0.23
+ramprate 201326609 60 me.time.rate
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1filter1.ts
+
+131074
+1
+325
+324
+0
+0
+1
+1
+0
+325
+325
+963
+60
+26
+13
+26
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+3
+2
+2
+0
+0.000980392
+0.000980392
+-4.58633e21
+0
+r
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  1
+   
+      name  r
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1fit1.n
+
+TOP:fit
+tile -350 100 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	level3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1fit1.parm
+
+?
+pageindex 67108864 1
+fit 67108864 nativeres
+outputresolution 67108864 custom
+resolutionw 67108864 1280
+resolutionh 67108864 720
+outputaspect 67108864 resolution
+?
+
+
+------------------------------
+
+project1kinectazure1.n
+
+TOP:kinectazure
+tile -800 -50 139 106
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1kinectazure1.parm
+
+?
+sensor 67108864 V100068611531200000686115312
+modelpath 201326609 "" "app.configFolder  "Modelsdnn_model_2_0_op11.onnx""
+image 67108864 ir
+?
+
+
+------------------------------
+
+project1kinectazure2.chop
+
+5
+1
+
+
+------------------------------
+
+project1kinectazure2.n
+
+CHOP:kinectazure
+tile -800 -200 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1kinectazure2.parm
+
+?
+top 67108896 kinectazure1
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1kinectazure2.ts
+
+65538
+99
+325
+324
+0
+0
+1
+1
+0
+325
+325
+0
+60
+frame
+timestamp
+p1id
+p1pelvis:tx
+p1pelvis:ty
+p1pelvis:tz
+p1spine_navel:tx
+p1spine_navel:ty
+p1spine_navel:tz
+p1spine_chest:tx
+p1spine_chest:ty
+p1spine_chest:tz
+p1neck:tx
+p1neck:ty
+p1neck:tz
+p1clavicle_l:tx
+p1clavicle_l:ty
+p1clavicle_l:tz
+p1shoulder_l:tx
+p1shoulder_l:ty
+p1shoulder_l:tz
+p1elbow_l:tx
+p1elbow_l:ty
+p1elbow_l:tz
+p1wrist_l:tx
+p1wrist_l:ty
+p1wrist_l:tz
+p1hand_l:tx
+p1hand_l:ty
+p1hand_l:tz
+p1handtip_l:tx
+p1handtip_l:ty
+p1handtip_l:tz
+p1thumb_l:tx
+p1thumb_l:ty
+p1thumb_l:tz
+p1clavicle_r:tx
+p1clavicle_r:ty
+p1clavicle_r:tz
+p1shoulder_r:tx
+p1shoulder_r:ty
+p1shoulder_r:tz
+p1elbow_r:tx
+p1elbow_r:ty
+p1elbow_r:tz
+p1wrist_r:tx
+p1wrist_r:ty
+p1wrist_r:tz
+p1hand_r:tx
+p1hand_r:ty
+p1hand_r:tz
+p1handtip_r:tx
+p1handtip_r:ty
+p1handtip_r:tz
+p1thumb_r:tx
+p1thumb_r:ty
+p1thumb_r:tz
+p1hip_l:tx
+p1hip_l:ty
+p1hip_l:tz
+p1knee_l:tx
+p1knee_l:ty
+p1knee_l:tz
+p1ankle_l:tx
+p1ankle_l:ty
+p1ankle_l:tz
+p1foot_l:tx
+p1foot_l:ty
+p1foot_l:tz
+p1hip_r:tx
+p1hip_r:ty
+p1hip_r:tz
+p1knee_r:tx
+p1knee_r:ty
+p1knee_r:tz
+p1ankle_r:tx
+p1ankle_r:ty
+p1ankle_r:tz
+p1foot_r:tx
+p1foot_r:ty
+p1foot_r:tz
+p1head:tx
+p1head:ty
+p1head:tz
+p1nose:tx
+p1nose:ty
+p1nose:tz
+p1eye_l:tx
+p1eye_l:ty
+p1eye_l:tz
+p1ear_l:tx
+p1ear_l:ty
+p1ear_l:tz
+p1eye_r:tx
+p1eye_r:ty
+p1eye_r:tz
+p1ear_r:tx
+p1ear_r:ty
+p1ear_r:tz
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  99
+   
+      name  frame
+      data_rle  2537 
+   
+   
+      name  timestamp
+      data_rle  0 
+   
+   
+      name  p1id
+      data_rle  0 
+   
+   
+      name  p1pelvis:tx
+      data_rle  0 
+   
+   
+      name  p1pelvis:ty
+      data_rle  0 
+   
+   
+      name  p1pelvis:tz
+      data_rle  0 
+   
+   
+      name  p1spine_navel:tx
+      data_rle  0 
+   
+   
+      name  p1spine_navel:ty
+      data_rle  0 
+   
+   
+      name  p1spine_navel:tz
+      data_rle  0 
+   
+   
+      name  p1spine_chest:tx
+      data_rle  0 
+   
+   
+      name  p1spine_chest:ty
+      data_rle  0 
+   
+   
+      name  p1spine_chest:tz
+      data_rle  0 
+   
+   
+      name  p1neck:tx
+      data_rle  0 
+   
+   
+      name  p1neck:ty
+      data_rle  0 
+   
+   
+      name  p1neck:tz
+      data_rle  0 
+   
+   
+      name  p1clavicle_l:tx
+      data_rle  0 
+   
+   
+      name  p1clavicle_l:ty
+      data_rle  0 
+   
+   
+      name  p1clavicle_l:tz
+      data_rle  0 
+   
+   
+      name  p1shoulder_l:tx
+      data_rle  0 
+   
+   
+      name  p1shoulder_l:ty
+      data_rle  0 
+   
+   
+      name  p1shoulder_l:tz
+      data_rle  0 
+   
+   
+      name  p1elbow_l:tx
+      data_rle  0 
+   
+   
+      name  p1elbow_l:ty
+      data_rle  0 
+   
+   
+      name  p1elbow_l:tz
+      data_rle  0 
+   
+   
+      name  p1wrist_l:tx
+      data_rle  0 
+   
+   
+      name  p1wrist_l:ty
+      data_rle  0 
+   
+   
+      name  p1wrist_l:tz
+      data_rle  0 
+   
+   
+      name  p1hand_l:tx
+      data_rle  0 
+   
+   
+      name  p1hand_l:ty
+      data_rle  0 
+   
+   
+      name  p1hand_l:tz
+      data_rle  0 
+   
+   
+      name  p1handtip_l:tx
+      data_rle  0 
+   
+   
+      name  p1handtip_l:ty
+      data_rle  0 
+   
+   
+      name  p1handtip_l:tz
+      data_rle  0 
+   
+   
+      name  p1thumb_l:tx
+      data_rle  0 
+   
+   
+      name  p1thumb_l:ty
+      data_rle  0 
+   
+   
+      name  p1thumb_l:tz
+      data_rle  0 
+   
+   
+      name  p1clavicle_r:tx
+      data_rle  0 
+   
+   
+      name  p1clavicle_r:ty
+      data_rle  0 
+   
+   
+      name  p1clavicle_r:tz
+      data_rle  0 
+   
+   
+      name  p1shoulder_r:tx
+      data_rle  0 
+   
+   
+      name  p1shoulder_r:ty
+      data_rle  0 
+   
+   
+      name  p1shoulder_r:tz
+      data_rle  0 
+   
+   
+      name  p1elbow_r:tx
+      data_rle  0 
+   
+   
+      name  p1elbow_r:ty
+      data_rle  0 
+   
+   
+      name  p1elbow_r:tz
+      data_rle  0 
+   
+   
+      name  p1wrist_r:tx
+      data_rle  0 
+   
+   
+      name  p1wrist_r:ty
+      data_rle  0 
+   
+   
+      name  p1wrist_r:tz
+      data_rle  0 
+   
+   
+      name  p1hand_r:tx
+      data_rle  0 
+   
+   
+      name  p1hand_r:ty
+      data_rle  0 
+   
+   
+      name  p1hand_r:tz
+      data_rle  0 
+   
+   
+      name  p1handtip_r:tx
+      data_rle  0 
+   
+   
+      name  p1handtip_r:ty
+      data_rle  0 
+   
+   
+      name  p1handtip_r:tz
+      data_rle  0 
+   
+   
+      name  p1thumb_r:tx
+      data_rle  0 
+   
+   
+      name  p1thumb_r:ty
+      data_rle  0 
+   
+   
+      name  p1thumb_r:tz
+      data_rle  0 
+   
+   
+      name  p1hip_l:tx
+      data_rle  0 
+   
+   
+      name  p1hip_l:ty
+      data_rle  0 
+   
+   
+      name  p1hip_l:tz
+      data_rle  0 
+   
+   
+      name  p1knee_l:tx
+      data_rle  0 
+   
+   
+      name  p1knee_l:ty
+      data_rle  0 
+   
+   
+      name  p1knee_l:tz
+      data_rle  0 
+   
+   
+      name  p1ankle_l:tx
+      data_rle  0 
+   
+   
+      name  p1ankle_l:ty
+      data_rle  0 
+   
+   
+      name  p1ankle_l:tz
+      data_rle  0 
+   
+   
+      name  p1foot_l:tx
+      data_rle  0 
+   
+   
+      name  p1foot_l:ty
+      data_rle  0 
+   
+   
+      name  p1foot_l:tz
+      data_rle  0 
+   
+   
+      name  p1hip_r:tx
+      data_rle  0 
+   
+   
+      name  p1hip_r:ty
+      data_rle  0 
+   
+   
+      name  p1hip_r:tz
+      data_rle  0 
+   
+   
+      name  p1knee_r:tx
+      data_rle  0 
+   
+   
+      name  p1knee_r:ty
+      data_rle  0 
+   
+   
+      name  p1knee_r:tz
+      data_rle  0 
+   
+   
+      name  p1ankle_r:tx
+      data_rle  0 
+   
+   
+      name  p1ankle_r:ty
+      data_rle  0 
+   
+   
+      name  p1ankle_r:tz
+      data_rle  0 
+   
+   
+      name  p1foot_r:tx
+      data_rle  0 
+   
+   
+      name  p1foot_r:ty
+      data_rle  0 
+   
+   
+      name  p1foot_r:tz
+      data_rle  0 
+   
+   
+      name  p1head:tx
+      data_rle  0 
+   
+   
+      name  p1head:ty
+      data_rle  0 
+   
+   
+      name  p1head:tz
+      data_rle  0 
+   
+   
+      name  p1nose:tx
+      data_rle  0 
+   
+   
+      name  p1nose:ty
+      data_rle  0 
+   
+   
+      name  p1nose:tz
+      data_rle  0 
+   
+   
+      name  p1eye_l:tx
+      data_rle  0 
+   
+   
+      name  p1eye_l:ty
+      data_rle  0 
+   
+   
+      name  p1eye_l:tz
+      data_rle  0 
+   
+   
+      name  p1ear_l:tx
+      data_rle  0 
+   
+   
+      name  p1ear_l:ty
+      data_rle  0 
+   
+   
+      name  p1ear_l:tz
+      data_rle  0 
+   
+   
+      name  p1eye_r:tx
+      data_rle  0 
+   
+   
+      name  p1eye_r:ty
+      data_rle  0 
+   
+   
+      name  p1eye_r:tz
+      data_rle  0 
+   
+   
+      name  p1ear_r:tx
+      data_rle  0 
+   
+   
+      name  p1ear_r:ty
+      data_rle  0 
+   
+   
+      name  p1ear_r:tz
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1lag1.chop
+
+5
+1
+
+
+------------------------------
+
+project1lag1.n
+
+CHOP:lag
+tile 1250 -150 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	filter1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1lag1.parm
+
+?
+lag1 67108864 0.01
+lag2 67108864 0.1
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1lag1.ts
+
+65538
+1
+325
+324
+0
+0
+1
+1
+0
+325
+325
+962
+60
+r
+1.4013e-45
+0
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  1
+   
+      name  r
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1lag2.chop
+
+5
+1
+
+
+------------------------------
+
+project1lag2.n
+
+CHOP:lag
+tile -300 -200 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1lag2.parm
+
+?
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1lag2.ts
+
+65538
+1
+325
+324
+0
+0
+1
+1
+0
+325
+325
+5062
+60
+p1head:tx
+0.5
+0
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  1
+   
+      name  p1head:tx
+      data_rle  0.5 
+   
+
+
+
+
+------------------------------
+
+project1level1.n
+
+TOP:level
+tile -250 -25 130 97
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	fit1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1level1.parm
+
+?
+brightness1 67108864 1.8
+gamma1 67108864 2.15
+contrast 67108864 0.89
+?
+
+
+------------------------------
+
+project1level2.n
+
+TOP:level
+tile -600 -50 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1level2.parm
+
+?
+brightness1 67108864 1.91
+gamma1 67108864 2.01
+contrast 67108864 1.14
+?
+
+
+------------------------------
+
+project1level3.n
+
+TOP:level
+tile -475 -50 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	level2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1level3.parm
+
+?
+brightness1 67108864 1.91
+gamma1 67108864 2.17
+contrast 67108864 1.93
+?
+
+
+------------------------------
+
+project1math1.n
+
+CHOP:math
+tile 850 -100 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	topto1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math1.parm
+
+?
+pageindex 67108864 2
+chanop 67108864 avg
+fromrange1 67108864 0
+fromrange2 67108864 7000
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1math2.n
+
+CHOP:math
+tile -500 -200 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1math2.parm
+
+?
+pageindex 67108864 2
+fromrange1 67108864 1
+fromrange2 67108864 -1
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1oscout1.chop
+
+5
+1
+
+
+------------------------------
+
+project1oscout1.n
+
+CHOP:oscout
+tile 700 125 252 246
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1oscout1.parm
+
+?
+netaddress 67108864 127.0.0.1
+localaddress 67108912 127.0.0.1 ''
+sendrate 67108864 off
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1oscout1.ts
+
+65538
+1
+325
+324
+0
+0
+1
+1
+0
+325
+325
+0
+60
+r
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  1
+   
+      name  r
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+project1oscout2.chop
+
+5
+1
+
+
+------------------------------
+
+project1oscout2.n
+
+CHOP:oscout
+tile 75 -175 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	rename1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1oscout2.parm
+
+?
+sendrate 67108864 off
+timeslice 67108864 on
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1oscout2.ts
+
+65538
+1
+325
+324
+0
+0
+1
+1
+0
+325
+325
+0
+60
+pos
+
+   rate  60
+   start  325
+   tracklength  1
+   tracks  1
+   
+      name  pos
+      data_rle  0.5 
+   
+
+
+
+
+------------------------------
+
+project1out1.n
+
+TOP:out
+tile 875 0 130 90
+flags   viewer 1 display on parlanguage 0
+inputs
+
+0 	comp1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1out1.parm
+
+?
+label 201326609 "" me.name
+?
+
+
+------------------------------
+
+project1rename1.n
+
+CHOP:rename
+tile -100 -175 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1rename1.parm
+
+?
+renameto 67108864 pos
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1select1.n
+
+CHOP:select
+tile -650 -200 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1select1.parm
+
+?
+channames 67108864 p1head:tx
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1thresh1.n
+
+TOP:thresh
+tile 250 150 130 97
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	blur1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+project1thresh1.parm
+
+?
+threshold 67108864 0.104
+soften 67108864 0.005
+?
+
+
+------------------------------
+
+project1topto1.n
+
+CHOP:topto
+tile 675 -125 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 5 -1 1 0.034375 -1.5 1.5 4 2 10648 10 0
+end
+
+
+------------------------------
+
+project1topto1.parm
+
+?
+top 67108864 analyze1
+rate 201326609 60 me.time.rate
+exportmethod 67108864 datname
+autoexportroot 201326609 "" parent
+?
+
+
+------------------------------
+
+project1.n
+
+COMP:container
+v 1079.86 392.879 1.09105
+tile 200 100 400 244
+flags   viewer 1 parlanguage 0
+color 0.56 0.56 0.56 
+end
+
+
+------------------------------
+
+project1.panel
+
+1
+3
+10
+u 0.54
+v 0.720528
+trueu 0.54
+truev 0.720528
+rollu 0.296325
+rollv 0.4242
+screenw 1920
+screenh 1080
+screenwm 1920
+screenhm 1080
+
+
+------------------------------
+
+project1.parm
+
+?
+pageindex 67108864 1
+w 67108864 1280
+h 67108864 720
+resizecomp 201326609 "" me
+repocomp 201326609 "" me
+top 67108864 .out1
+topsmoothness 67108864 mipmap
+borderover 67108864 off
+parentshortcut 67108864 Project
+?
+
+
+------------------------------
+

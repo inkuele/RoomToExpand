@@ -1,0 +1,9 @@
+TOP:edge
+tile 1125 550 302 169
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	mono1
+}
+color 0.55 0.55 0.55 
+end

@@ -1,0 +1,8 @@
+?
+specifydevice 67108864 on
+device 67108864 {0.0.0.00000000}.{3cb19153-91a2-4ddc-a686-bce4218a2666}||Lautsprecher_(Focusrite_USB_Audio)||2
+file 201326608 audio-samples/CHCR78.wav app.configFolder+'/Audio/Notify.aiff'
+mode 67108864 trigger
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

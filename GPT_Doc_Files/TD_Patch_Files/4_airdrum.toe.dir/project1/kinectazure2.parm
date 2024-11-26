@@ -1,0 +1,8 @@
+?
+top 67108864 kinectazure1
+maxplayers 67108864 2
+worldspace 67108864 off
+depthspace 67108864 on
+timeslice 67108864 on
+autoexportroot 201326609 "" parent()
+?

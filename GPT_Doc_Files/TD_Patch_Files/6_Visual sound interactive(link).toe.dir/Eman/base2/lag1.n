@@ -1,0 +1,9 @@
+CHOP:lag
+tile 500 -450 130 90
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	merge1
+}
+color 0.55 0.55 0.55 
+end

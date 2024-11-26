@@ -1,0 +1,10 @@
+?
+retrigger 0 0.02
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?

@@ -1,0 +1,7 @@
+COMP:window
+v 791.988 472.258 0.22401
+comment "Perform Mode configuration:\\nPress F1 to enter Perform Mode, ESC to exit"
+tile -200 40 160 130
+flags =  picked on current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end

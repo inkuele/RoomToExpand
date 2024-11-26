@@ -1,0 +1,6 @@
+?
+specifydevice 0 on
+file 16 audio-samples/Snare909.wav app.configFolder+'/Audio/Notify.aiff'
+trigger 49 0 op('null2')['chan1']
+timeslice 0 on
+?

@@ -1,0 +1,5511 @@
+.application
+
+
+Desk..
+ layout 
+desk -c  
+desk -n pane1 
+
+pane1
+desk -p Eman pane1
+desk -t neteditor pane1
+desk -k 0 pane1
+neteditor -c 1 -e 1 -G 0.75 -o 0 -r 1 -P 0.8 -s 0 -w 0 -x 0 -t 1 -d 1 -g 0 -p pane1
+
+browser on
+winplacement ontop0 modeauto posx0 posy0 sizex1024 sizey768 enable1 perform.pathperform perform.start0
+
+
+------------------------------
+
+.build
+
+version 099
+build 2022.35320
+time Wed Oct  2 12:15:32 2024
+osname Windows
+osversion 10
+
+
+------------------------------
+
+.grps
+
+-2
+0
+
+
+------------------------------
+
+.parm
+
+?
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+.root
+
+v -7029.24 -3268.8 24.2718
+end
+
+
+------------------------------
+
+.start
+
+cookrate 60
+clock -f 1 -s 1 -o 0 -w 0
+realtime on
+viewers off
+expectednodes 168 30977
+resetaudioondevicechange off
+
+
+------------------------------
+
+EmanBG.n
+
+TOP:null
+tile 1600 1050 130 90
+flags   viewer 1 display on parlanguage 0
+inputs
+
+0 	over1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanKickin1.n
+
+SOP:in
+tile 0 0 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanKickout1.n
+
+SOP:out
+tile 227 0 130 90
+flags   viewer 1 render on display on parlanguage 0
+inputs
+
+0 	in1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanKick.gnode
+
+1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.1 -0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.1 -0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.1 -0.5 0 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+
+
+------------------------------
+
+EmanKick.n
+
+COMP:geo
+tile -375 675 160 130
+flags   viewer 1 render on display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 0.801025 1.39898 -0.8 -0.2 -0.298975 0.298975 0 0 1 -0.700001 -0.5 0 1 0 0 0 0 1 0 0 0 0 1 0 -1.1 0.5 -1.00145 1 15 1 1 1 195 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+EmanKick.network
+
+1
+compinputs
+
+0 	sphere1
+	in1
+	SOP
+
+end
+
+
+------------------------------
+
+EmanKick.parm
+
+?
+tx 0 1.1
+ty 0 -0.5
+tz 0 0
+sx 0 0.5
+sy 0 0.5
+sz 0 0.5
+material 0 constant1
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+EmanKick1in1.n
+
+SOP:in
+tile 0 0 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanKick1out1.n
+
+SOP:out
+tile 227 0 130 90
+flags   viewer 1 render on display on parlanguage 0
+inputs
+
+0 	in1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanKick1.gnode
+
+1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 -0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 -0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 -0.5 0 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+
+
+------------------------------
+
+EmanKick1.n
+
+COMP:geo
+tile -450 1025 160 130
+flags   viewer 1 render on display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1.19898 -0.601025 -0.8 -0.2 -0.298975 0.298975 0 0 1 0 0 0 -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind -nanind 1 15 1 1 1 195 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+EmanKick1.network
+
+1
+compinputs
+
+0 	sphere1
+	in1
+	SOP
+
+end
+
+
+------------------------------
+
+EmanKick1.parm
+
+?
+tx 48 -0.9 op'lfo1''chan1'
+ty 32 -0.5
+tz 32 0
+sx 32 0.5
+sy 48 0.5 op'lfo1''chan1'
+sz 32 0.5
+material 0 constant3
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+EmanSnarein1.n
+
+SOP:in
+tile 0 0 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanSnareout1.n
+
+SOP:out
+tile 227 0 130 90
+flags   viewer 1 render on display on parlanguage 0
+inputs
+
+0 	in1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanSnare.gnode
+
+1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.4 0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.4 0.5 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 1.4 0.5 0 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+
+
+------------------------------
+
+EmanSnare.n
+
+COMP:geo
+tile -375 500 160 130
+flags   viewer 1 render on display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 29 0.2 1 1 0 0 1 0 0 1 0.66439 -0.700001 -0.5 0 1 0 1.70052e-08 0 0 1 0 0 -1.70052e-08 0 1 0 -1.4 -0.5 -1.00145 1 16 1 1 1 195 4883 1 -1 1 1 11 0 0 0 4 0 1
+end
+
+
+------------------------------
+
+EmanSnare.network
+
+1
+compinputs
+
+0 	sphere1
+	in1
+	SOP
+
+end
+
+
+------------------------------
+
+EmanSnare.parm
+
+?
+tx 0 1.4
+ty 0 0.5
+tz 0 0
+sx 32 0.5
+sy 32 0.5
+sz 32 0.5
+material 0 constant2
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+EmanSnare1in1.n
+
+SOP:in
+tile 0 0 130 90
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanSnare1out1.n
+
+SOP:out
+tile 227 0 130 90
+flags   viewer 1 render on display on parlanguage 0
+inputs
+
+0 	in1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanSnare1.gnode
+
+1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 0.6 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 0.6 0 1
+UT_DMatrix4 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 -0.9 0.6 0 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+
+
+------------------------------
+
+EmanSnare1.n
+
+COMP:geo
+tile -475 850 160 130
+flags   viewer 1 render on display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 29 0.2 1 1 0 0 1 0 0 1 0.66439 -0.9 0.6 0 1 0 0 0 0 1 0 0 1.00788e-17 1.01062e-18 1 0 0.9 -0.6 -3.01497 1 16 1 1 1 195 4883 1 -1 1 1 11 0 0 0 4 0 1
+end
+
+
+------------------------------
+
+EmanSnare1.network
+
+1
+compinputs
+
+0 	sphere1
+	in1
+	SOP
+
+end
+
+
+------------------------------
+
+EmanSnare1.parm
+
+?
+tx 0 -0.9
+ty 0 0.6
+tz 0 0
+sx 32 0.5
+sy 32 0.5
+sz 32 0.5
+material 0 constant4
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+EmanUV.n
+
+CHOP:null
+tile -475 -800 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	base1out1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmanUV1.n
+
+CHOP:null
+tile -250 -1899 130 90
+flags   viewer 1 activate on parlanguage 0
+inputs
+
+0 	base2out1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanaudioplay1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanaudioplay1.n
+
+CHOP:audioplay
+tile 1100 -750 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanaudioplay1.parm
+
+?
+file 16 audio-samplesKick909.wav app.configFolder'AudioNotify.aiff'
+trigger 49 0 op'null1''chan1'
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanaudioplay1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+state
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  state
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanaudioplay2.chop
+
+5
+1
+
+
+------------------------------
+
+Emanaudioplay2.n
+
+CHOP:audioplay
+tile 1100 -875 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanaudioplay2.parm
+
+?
+specifydevice 0 on
+file 16 audio-samplesSnare909.wav app.configFolder'AudioNotify.aiff'
+trigger 49 0 op'null2''chan1'
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanaudioplay2.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+state
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  state
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanaudioplay3.chop
+
+5
+1
+
+
+------------------------------
+
+Emanaudioplay3.n
+
+CHOP:audioplay
+tile 1025 -1900 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanaudioplay3.parm
+
+?
+file 16 audio-samplesLowTom808.wav app.configFolder'AudioNotify.aiff'
+trigger 49 0 op'null5''chan1'
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanaudioplay3.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+state
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  state
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanaudioplay4.chop
+
+5
+1
+
+
+------------------------------
+
+Emanaudioplay4.n
+
+CHOP:audioplay
+tile 1025 -2025 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanaudioplay4.parm
+
+?
+file 16 audio-samplesOHCR78.wav app.configFolder'AudioNotify.aiff'
+trigger 49 0 op'null6''chan1'
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanaudioplay4.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+state
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  state
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanbase1kinectazure2.chop
+
+5
+1
+
+
+------------------------------
+
+Emanbase1kinectazure2.n
+
+CHOP:kinectazure
+tile -575 -425 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1kinectazure2.parm
+
+?
+top 0 ..kinectazure1
+worldspace 0 off
+depthspace 0 on
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanbase1kinectazure2.ts
+
+65538
+67
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+frame
+timestamp
+p1id
+p1pelvis:depthu
+p1pelvis:depthv
+p1spine_navel:depthu
+p1spine_navel:depthv
+p1spine_chest:depthu
+p1spine_chest:depthv
+p1neck:depthu
+p1neck:depthv
+p1clavicle_l:depthu
+p1clavicle_l:depthv
+p1shoulder_l:depthu
+p1shoulder_l:depthv
+p1elbow_l:depthu
+p1elbow_l:depthv
+p1wrist_l:depthu
+p1wrist_l:depthv
+p1hand_l:depthu
+p1hand_l:depthv
+p1handtip_l:depthu
+p1handtip_l:depthv
+p1thumb_l:depthu
+p1thumb_l:depthv
+p1clavicle_r:depthu
+p1clavicle_r:depthv
+p1shoulder_r:depthu
+p1shoulder_r:depthv
+p1elbow_r:depthu
+p1elbow_r:depthv
+p1wrist_r:depthu
+p1wrist_r:depthv
+p1hand_r:depthu
+p1hand_r:depthv
+p1handtip_r:depthu
+p1handtip_r:depthv
+p1thumb_r:depthu
+p1thumb_r:depthv
+p1hip_l:depthu
+p1hip_l:depthv
+p1knee_l:depthu
+p1knee_l:depthv
+p1ankle_l:depthu
+p1ankle_l:depthv
+p1foot_l:depthu
+p1foot_l:depthv
+p1hip_r:depthu
+p1hip_r:depthv
+p1knee_r:depthu
+p1knee_r:depthv
+p1ankle_r:depthu
+p1ankle_r:depthv
+p1foot_r:depthu
+p1foot_r:depthv
+p1head:depthu
+p1head:depthv
+p1nose:depthu
+p1nose:depthv
+p1eye_l:depthu
+p1eye_l:depthv
+p1ear_l:depthu
+p1ear_l:depthv
+p1eye_r:depthu
+p1eye_r:depthv
+p1ear_r:depthu
+p1ear_r:depthv
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  67
+   
+      name  frame
+      data_rle  2634 
+   
+   
+      name  timestamp
+      data_rle  9.94002e07 
+   
+   
+      name  p1id
+      data_rle  8 
+   
+   
+      name  p1pelvis:depthu
+      data_rle  0.7114 
+   
+   
+      name  p1pelvis:depthv
+      data_rle  0.299651 
+   
+   
+      name  p1spine_navel:depthu
+      data_rle  0.708969 
+   
+   
+      name  p1spine_navel:depthv
+      data_rle  0.384992 
+   
+   
+      name  p1spine_chest:depthu
+      data_rle  0.706494 
+   
+   
+      name  p1spine_chest:depthv
+      data_rle  0.448448 
+   
+   
+      name  p1neck:depthu
+      data_rle  0.700358 
+   
+   
+      name  p1neck:depthv
+      data_rle  0.544809 
+   
+   
+      name  p1clavicle_l:depthu
+      data_rle  0.715095 
+   
+   
+      name  p1clavicle_l:depthv
+      data_rle  0.531462 
+   
+   
+      name  p1shoulder_l:depthu
+      data_rle  0.772646 
+   
+   
+      name  p1shoulder_l:depthv
+      data_rle  0.520566 
+   
+   
+      name  p1elbow_l:depthu
+      data_rle  0.827824 
+   
+   
+      name  p1elbow_l:depthv
+      data_rle  0.404497 
+   
+   
+      name  p1wrist_l:depthu
+      data_rle  0.764562 
+   
+   
+      name  p1wrist_l:depthv
+      data_rle  0.376563 
+   
+   
+      name  p1hand_l:depthu
+      data_rle  0.730235 
+   
+   
+      name  p1hand_l:depthv
+      data_rle  0.394434 
+   
+   
+      name  p1handtip_l:depthu
+      data_rle  0.690782 
+   
+   
+      name  p1handtip_l:depthv
+      data_rle  0.40728 
+   
+   
+      name  p1thumb_l:depthu
+      data_rle  0.703709 
+   
+   
+      name  p1thumb_l:depthv
+      data_rle  0.407851 
+   
+   
+      name  p1clavicle_r:depthu
+      data_rle  0.688117 
+   
+   
+      name  p1clavicle_r:depthv
+      data_rle  0.527006 
+   
+   
+      name  p1shoulder_r:depthu
+      data_rle  0.640359 
+   
+   
+      name  p1shoulder_r:depthv
+      data_rle  0.504843 
+   
+   
+      name  p1elbow_r:depthu
+      data_rle  0.609553 
+   
+   
+      name  p1elbow_r:depthv
+      data_rle  0.382497 
+   
+   
+      name  p1wrist_r:depthu
+      data_rle  0.641322 
+   
+   
+      name  p1wrist_r:depthv
+      data_rle  0.390079 
+   
+   
+      name  p1hand_r:depthu
+      data_rle  0.65846 
+   
+   
+      name  p1hand_r:depthv
+      data_rle  0.439289 
+   
+   
+      name  p1handtip_r:depthu
+      data_rle  0.670874 
+   
+   
+      name  p1handtip_r:depthv
+      data_rle  0.400128 
+   
+   
+      name  p1thumb_r:depthu
+      data_rle  0.689947 
+   
+   
+      name  p1thumb_r:depthv
+      data_rle  0.430104 
+   
+   
+      name  p1hip_l:depthu
+      data_rle  0.752561 
+   
+   
+      name  p1hip_l:depthv
+      data_rle  0.302152 
+   
+   
+      name  p1knee_l:depthu
+      data_rle  0.760438 
+   
+   
+      name  p1knee_l:depthv
+      data_rle  0.118462 
+   
+   
+      name  p1ankle_l:depthu
+      data_rle  0.744553 
+   
+   
+      name  p1ankle_l:depthv
+      data_rle  -0.0632566 
+   
+   
+      name  p1foot_l:depthu
+      data_rle  0.737958 
+   
+   
+      name  p1foot_l:depthv
+      data_rle  -0.156035 
+   
+   
+      name  p1hip_r:depthu
+      data_rle  0.674435 
+   
+   
+      name  p1hip_r:depthv
+      data_rle  0.29764 
+   
+   
+      name  p1knee_r:depthu
+      data_rle  0.654458 
+   
+   
+      name  p1knee_r:depthv
+      data_rle  0.134155 
+   
+   
+      name  p1ankle_r:depthu
+      data_rle  0.660946 
+   
+   
+      name  p1ankle_r:depthv
+      data_rle  -0.0596305 
+   
+   
+      name  p1foot_r:depthu
+      data_rle  0.642919 
+   
+   
+      name  p1foot_r:depthv
+      data_rle  -0.145348 
+   
+   
+      name  p1head:depthu
+      data_rle  0.696568 
+   
+   
+      name  p1head:depthv
+      data_rle  0.580955 
+   
+   
+      name  p1nose:depthu
+      data_rle  0.660257 
+   
+   
+      name  p1nose:depthv
+      data_rle  0.621563 
+   
+   
+      name  p1eye_l:depthu
+      data_rle  0.678696 
+   
+   
+      name  p1eye_l:depthv
+      data_rle  0.633329 
+   
+   
+      name  p1ear_l:depthu
+      data_rle  0.724518 
+   
+   
+      name  p1ear_l:depthv
+      data_rle  0.614758 
+   
+   
+      name  p1eye_r:depthu
+      data_rle  0.659679 
+   
+   
+      name  p1eye_r:depthv
+      data_rle  0.628393 
+   
+   
+      name  p1ear_r:depthu
+      data_rle  0.668917 
+   
+   
+      name  p1ear_r:depthv
+      data_rle  0.603921 
+   
+
+
+
+
+------------------------------
+
+Emanbase1lag1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanbase1lag1.n
+
+CHOP:lag
+tile 500 -450 130 90
+flags   picked on current on viewer 1 parlanguage 0
+inputs
+
+0 	merge1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1lag1.parm
+
+?
+lag1 0 0.1
+lag2 0 0.1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanbase1lag1.ts
+
+65538
+2
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+p1hand_r:depthu
+0.323395
+0.000252128
+p1hand_r:depthv
+0.299096
+7.21216e-06
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  2
+   
+      name  p1hand_r:depthu
+      data_rle  0.323395 
+   
+   
+      name  p1hand_r:depthv
+      data_rle  0.299096 
+   
+
+
+
+
+------------------------------
+
+Emanbase1math1.n
+
+CHOP:math
+tile 0 -425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1math1.parm
+
+?
+pageindex1 0 2
+fromrange1 0 0.05
+fromrange2 0 0.95
+torange1 0 1
+torange2 0 0
+?
+
+
+------------------------------
+
+Emanbase1math2.n
+
+CHOP:math
+tile 0 -550 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1math2.parm
+
+?
+pageindex1 0 2
+fromrange1 0 0.2
+fromrange2 0 1
+?
+
+
+------------------------------
+
+Emanbase1merge1.n
+
+CHOP:merge
+tile 300 -500 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math1
+1 	math2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1out1.n
+
+CHOP:out
+tile 700 -450 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1select1.n
+
+CHOP:select
+tile -275 -425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1select1.parm
+
+?
+channames 0 p1hand_r:depthu
+?
+
+
+------------------------------
+
+Emanbase1select2.n
+
+CHOP:select
+tile -275 -550 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1select2.parm
+
+?
+channames 0 p1hand_r:depthv
+?
+
+
+------------------------------
+
+Emanbase1.n
+
+COMP:base
+v 770.745 422.761 0.250249
+tile -725 -825 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase1.parm
+
+?
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+Emanbase2kinectazure2.chop
+
+5
+1
+
+
+------------------------------
+
+Emanbase2kinectazure2.n
+
+CHOP:kinectazure
+tile -575 -425 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2kinectazure2.parm
+
+?
+top 0 ..kinectazure1
+worldspace 0 off
+depthspace 0 on
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanbase2kinectazure2.ts
+
+65538
+67
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+frame
+timestamp
+p1id
+p1pelvis:depthu
+p1pelvis:depthv
+p1spine_navel:depthu
+p1spine_navel:depthv
+p1spine_chest:depthu
+p1spine_chest:depthv
+p1neck:depthu
+p1neck:depthv
+p1clavicle_l:depthu
+p1clavicle_l:depthv
+p1shoulder_l:depthu
+p1shoulder_l:depthv
+p1elbow_l:depthu
+p1elbow_l:depthv
+p1wrist_l:depthu
+p1wrist_l:depthv
+p1hand_l:depthu
+p1hand_l:depthv
+p1handtip_l:depthu
+p1handtip_l:depthv
+p1thumb_l:depthu
+p1thumb_l:depthv
+p1clavicle_r:depthu
+p1clavicle_r:depthv
+p1shoulder_r:depthu
+p1shoulder_r:depthv
+p1elbow_r:depthu
+p1elbow_r:depthv
+p1wrist_r:depthu
+p1wrist_r:depthv
+p1hand_r:depthu
+p1hand_r:depthv
+p1handtip_r:depthu
+p1handtip_r:depthv
+p1thumb_r:depthu
+p1thumb_r:depthv
+p1hip_l:depthu
+p1hip_l:depthv
+p1knee_l:depthu
+p1knee_l:depthv
+p1ankle_l:depthu
+p1ankle_l:depthv
+p1foot_l:depthu
+p1foot_l:depthv
+p1hip_r:depthu
+p1hip_r:depthv
+p1knee_r:depthu
+p1knee_r:depthv
+p1ankle_r:depthu
+p1ankle_r:depthv
+p1foot_r:depthu
+p1foot_r:depthv
+p1head:depthu
+p1head:depthv
+p1nose:depthu
+p1nose:depthv
+p1eye_l:depthu
+p1eye_l:depthv
+p1ear_l:depthu
+p1ear_l:depthv
+p1eye_r:depthu
+p1eye_r:depthv
+p1ear_r:depthu
+p1ear_r:depthv
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  67
+   
+      name  frame
+      data_rle  2634 
+   
+   
+      name  timestamp
+      data_rle  9.94002e07 
+   
+   
+      name  p1id
+      data_rle  8 
+   
+   
+      name  p1pelvis:depthu
+      data_rle  0.7114 
+   
+   
+      name  p1pelvis:depthv
+      data_rle  0.299651 
+   
+   
+      name  p1spine_navel:depthu
+      data_rle  0.708969 
+   
+   
+      name  p1spine_navel:depthv
+      data_rle  0.384992 
+   
+   
+      name  p1spine_chest:depthu
+      data_rle  0.706494 
+   
+   
+      name  p1spine_chest:depthv
+      data_rle  0.448448 
+   
+   
+      name  p1neck:depthu
+      data_rle  0.700358 
+   
+   
+      name  p1neck:depthv
+      data_rle  0.544809 
+   
+   
+      name  p1clavicle_l:depthu
+      data_rle  0.715095 
+   
+   
+      name  p1clavicle_l:depthv
+      data_rle  0.531462 
+   
+   
+      name  p1shoulder_l:depthu
+      data_rle  0.772646 
+   
+   
+      name  p1shoulder_l:depthv
+      data_rle  0.520566 
+   
+   
+      name  p1elbow_l:depthu
+      data_rle  0.827824 
+   
+   
+      name  p1elbow_l:depthv
+      data_rle  0.404497 
+   
+   
+      name  p1wrist_l:depthu
+      data_rle  0.764562 
+   
+   
+      name  p1wrist_l:depthv
+      data_rle  0.376563 
+   
+   
+      name  p1hand_l:depthu
+      data_rle  0.730235 
+   
+   
+      name  p1hand_l:depthv
+      data_rle  0.394434 
+   
+   
+      name  p1handtip_l:depthu
+      data_rle  0.690782 
+   
+   
+      name  p1handtip_l:depthv
+      data_rle  0.40728 
+   
+   
+      name  p1thumb_l:depthu
+      data_rle  0.703709 
+   
+   
+      name  p1thumb_l:depthv
+      data_rle  0.407851 
+   
+   
+      name  p1clavicle_r:depthu
+      data_rle  0.688117 
+   
+   
+      name  p1clavicle_r:depthv
+      data_rle  0.527006 
+   
+   
+      name  p1shoulder_r:depthu
+      data_rle  0.640359 
+   
+   
+      name  p1shoulder_r:depthv
+      data_rle  0.504843 
+   
+   
+      name  p1elbow_r:depthu
+      data_rle  0.609553 
+   
+   
+      name  p1elbow_r:depthv
+      data_rle  0.382497 
+   
+   
+      name  p1wrist_r:depthu
+      data_rle  0.641322 
+   
+   
+      name  p1wrist_r:depthv
+      data_rle  0.390079 
+   
+   
+      name  p1hand_r:depthu
+      data_rle  0.65846 
+   
+   
+      name  p1hand_r:depthv
+      data_rle  0.439289 
+   
+   
+      name  p1handtip_r:depthu
+      data_rle  0.670874 
+   
+   
+      name  p1handtip_r:depthv
+      data_rle  0.400128 
+   
+   
+      name  p1thumb_r:depthu
+      data_rle  0.689947 
+   
+   
+      name  p1thumb_r:depthv
+      data_rle  0.430104 
+   
+   
+      name  p1hip_l:depthu
+      data_rle  0.752561 
+   
+   
+      name  p1hip_l:depthv
+      data_rle  0.302152 
+   
+   
+      name  p1knee_l:depthu
+      data_rle  0.760438 
+   
+   
+      name  p1knee_l:depthv
+      data_rle  0.118462 
+   
+   
+      name  p1ankle_l:depthu
+      data_rle  0.744553 
+   
+   
+      name  p1ankle_l:depthv
+      data_rle  -0.0632566 
+   
+   
+      name  p1foot_l:depthu
+      data_rle  0.737958 
+   
+   
+      name  p1foot_l:depthv
+      data_rle  -0.156035 
+   
+   
+      name  p1hip_r:depthu
+      data_rle  0.674435 
+   
+   
+      name  p1hip_r:depthv
+      data_rle  0.29764 
+   
+   
+      name  p1knee_r:depthu
+      data_rle  0.654458 
+   
+   
+      name  p1knee_r:depthv
+      data_rle  0.134155 
+   
+   
+      name  p1ankle_r:depthu
+      data_rle  0.660946 
+   
+   
+      name  p1ankle_r:depthv
+      data_rle  -0.0596305 
+   
+   
+      name  p1foot_r:depthu
+      data_rle  0.642919 
+   
+   
+      name  p1foot_r:depthv
+      data_rle  -0.145348 
+   
+   
+      name  p1head:depthu
+      data_rle  0.696568 
+   
+   
+      name  p1head:depthv
+      data_rle  0.580955 
+   
+   
+      name  p1nose:depthu
+      data_rle  0.660257 
+   
+   
+      name  p1nose:depthv
+      data_rle  0.621563 
+   
+   
+      name  p1eye_l:depthu
+      data_rle  0.678696 
+   
+   
+      name  p1eye_l:depthv
+      data_rle  0.633329 
+   
+   
+      name  p1ear_l:depthu
+      data_rle  0.724518 
+   
+   
+      name  p1ear_l:depthv
+      data_rle  0.614758 
+   
+   
+      name  p1eye_r:depthu
+      data_rle  0.659679 
+   
+   
+      name  p1eye_r:depthv
+      data_rle  0.628393 
+   
+   
+      name  p1ear_r:depthu
+      data_rle  0.668917 
+   
+   
+      name  p1ear_r:depthv
+      data_rle  0.603921 
+   
+
+
+
+
+------------------------------
+
+Emanbase2lag1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanbase2lag1.n
+
+CHOP:lag
+tile 500 -450 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	merge1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2lag1.parm
+
+?
+lag1 0 0.1
+lag2 0 0.1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanbase2lag1.ts
+
+65538
+2
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+p1hand_l:depthu
+0.21288
+-0.0003151
+p1hand_l:depthv
+0.157552
+-7.5534e-05
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  2
+   
+      name  p1hand_l:depthu
+      data_rle  0.21288 
+   
+   
+      name  p1hand_l:depthv
+      data_rle  0.157552 
+   
+
+
+
+
+------------------------------
+
+Emanbase2math1.n
+
+CHOP:math
+tile 0 -425 130 90
+flags   picked on current on viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2math1.parm
+
+?
+pageindex1 0 2
+fromrange1 0 0.1
+fromrange2 0 0.9
+torange1 0 1
+torange2 0 0
+?
+
+
+------------------------------
+
+Emanbase2math2.n
+
+CHOP:math
+tile 0 -550 129 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2math2.parm
+
+?
+pageindex1 0 2
+fromrange1 0 0.3
+fromrange2 0 0.9
+?
+
+
+------------------------------
+
+Emanbase2merge1.n
+
+CHOP:merge
+tile 300 -500 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math1
+1 	math2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2out1.n
+
+CHOP:out
+tile 700 -450 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2select1.n
+
+CHOP:select
+tile -275 -425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2select1.parm
+
+?
+channames 0 p1hand_l:depthu
+?
+
+
+------------------------------
+
+Emanbase2select2.n
+
+CHOP:select
+tile -275 -550 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2select2.parm
+
+?
+channames 0 p1hand_l:depthv
+?
+
+
+------------------------------
+
+Emanbase2.n
+
+COMP:base
+v 186.908 415.896 0.15758
+tile -500 -1924 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanbase2.parm
+
+?
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+Emanblur1.n
+
+TOP:blur
+tile 350 425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	fit1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanblur1.parm
+
+?
+size 49 32 op'lag10''chan1'
+?
+
+
+------------------------------
+
+Emancam1file1.n
+
+SOP:filein
+tile 0 0 130 90
+flags   current on viewer 1 display on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emancam1file1.parm
+
+?
+file 17 "" "app.samplesFolder  'Geodefcam.geo'"
+?
+
+
+------------------------------
+
+Emancam1.gnode
+
+1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 5 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 5 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 5 1
+UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+
+
+------------------------------
+
+Emancam1.n
+
+COMP:cam
+tile 100 1350 160 130
+flags   viewer 1 display on pickable on parlanguage 0
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0 -0 -5 1 15 1 1 1 195 787 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+Emancam1.parm
+
+?
+tx 0 0
+ty 0 0
+tz 0 5
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+Emancomp1.n
+
+TOP:comp
+tile 1125 525 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	edge1
+1 	edge2
+2 	edge3
+3 	edge4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emancomp1.parm
+
+?
+operand 0 average
+?
+
+
+------------------------------
+
+Emanconstant1.n
+
+MAT:constant
+tile -125 725 130 90
+flags   viewer 1 parlanguage 0
+exports
+
+null3
+
+
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1.5 1.5 -0.997261 0.997261 -1.36329 1.36329 0 0 1 0 5.96046e-08 -5.96046e-08 1 0 0 0 0 1 0 0 0 0 1 0 -0 -5.96046e-08 -4.98461 1 15 1 1 1 192 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+Emanconstant1.parm
+
+?
+colorr 0 0.498039
+colorg 0 0.592157
+colorb 0 1
+alpha 18 1 op'null4''chan1'
+targetsop 0 out1
+pcaptpath 0 pCaptPath0
+pcaptdata 0 pCaptData0
+?
+
+
+------------------------------
+
+Emanconstant2.n
+
+MAT:constant
+tile -125 550 130 90
+flags   viewer 1 parlanguage 0
+exports
+
+null4
+
+
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1.5 1.5 -0.997261 0.997261 -1.36329 1.36329 0 0 1 0 5.96046e-08 -5.96046e-08 1 0 0 0 0 1 0 0 0 0 1 0 -0 -5.96046e-08 -4.98461 1 15 1 1 1 192 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+Emanconstant2.parm
+
+?
+colorr 0 1
+colorg 0 0.498039
+colorb 0 0.501961
+alpha 18 1 op'null3''chan1'
+targetsop 0 out1
+pcaptpath 0 pCaptPath0
+pcaptdata 0 pCaptData0
+?
+
+
+------------------------------
+
+Emanconstant3.n
+
+MAT:constant
+tile -200 1075 130 90
+flags   viewer 1 parlanguage 0
+exports
+
+null7
+
+
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1.5 1.5 -0.997261 0.997261 -1.36329 1.36329 0 0 1 0 5.96046e-08 -5.96046e-08 1 0 0 0 0 1 0 0 0 0 1 0 -0 -5.96046e-08 -4.98461 1 15 1 1 1 192 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+Emanconstant3.parm
+
+?
+colorr 0 0.498039
+colorg 0 1
+colorb 0 0.588235
+alpha 50 1 op'null5''chan1'
+targetsop 0 out1
+pcaptpath 0 pCaptPath0
+pcaptdata 0 pCaptData0
+?
+
+
+------------------------------
+
+Emanconstant4.n
+
+MAT:constant
+tile -200 900 130 90
+flags   viewer 1 parlanguage 0
+exports
+
+null8
+
+
+color 0.55 0.55 0.55 
+view 34 0.2 1 1 0 0 1 -1.5 1.5 -0.997261 0.997261 -1.36329 1.36329 0 0 1 0 5.96046e-08 -5.96046e-08 1 0 0 0 0 1 0 0 0 0 1 0 -0 -5.96046e-08 -4.98461 1 15 1 1 1 192 4883 1 -1 1 1 9 0 0 3 0 1
+end
+
+
+------------------------------
+
+Emanconstant4.parm
+
+?
+colorr 0 1
+colorg 0 0.772549
+colorb 0 0.498039
+alpha 34 1
+targetsop 0 out1
+pcaptpath 0 pCaptPath0
+pcaptdata 0 pCaptData0
+?
+
+
+------------------------------
+
+Emanedge1.n
+
+TOP:edge
+tile 700 675 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanedge1.parm
+
+?
+strength 49 0 op'math6''chan1'
+edgecolorr 0 1
+edgecolorg 0 0
+edgecolorb 0 0
+edgecolora 0 1
+compinput 0 on
+?
+
+
+------------------------------
+
+Emanedge2.n
+
+TOP:edge
+tile 700 525 130 72
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanedge2.parm
+
+?
+strength 49 0 op'math5''chan1'
+edgecolorr 0 0
+edgecolorg 0 0.184314
+edgecolorb 0 1
+edgecolora 0 1
+compinput 0 on
+?
+
+
+------------------------------
+
+Emanedge3.n
+
+TOP:edge
+tile 700 350 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanedge3.parm
+
+?
+strength 49 0 op'math7''chan1'
+edgecolorr 0 0
+edgecolorg 0 1
+edgecolorb 0 0.176471
+edgecolora 0 1
+compinput 0 on
+?
+
+
+------------------------------
+
+Emanedge4.n
+
+TOP:edge
+tile 700 225 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	mono1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanedge4.parm
+
+?
+strength 49 0 op'math8''chan1'
+edgecolorr 0 1
+edgecolorg 0 0.545098
+edgecolorb 0 0
+edgecolora 0 1
+compinput 0 on
+?
+
+
+------------------------------
+
+Emanfit1.n
+
+TOP:fit
+tile -175 450 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kinectazure1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanfit1.parm
+
+?
+fit 0 nativeres
+outputresolution 0 custom
+resolutionw 0 1280
+resolutionh 0 720
+outputaspect 0 resolution
+?
+
+
+------------------------------
+
+EmankickTrigger.chop
+
+5
+1
+
+
+------------------------------
+
+EmankickTrigger.n
+
+CHOP:trigger
+tile -25 -775 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmankickTrigger.parm
+
+?
+pageindex1 0 1
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+EmankickTrigger.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+1781
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+EmankickTrigger1.chop
+
+5
+1
+
+
+------------------------------
+
+EmankickTrigger1.n
+
+CHOP:trigger
+tile 200 -1874 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmankickTrigger1.parm
+
+?
+pageindex1 0 3
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+EmankickTrigger1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+12
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emankinectazure1.n
+
+TOP:kinectazure
+tile -1050 450 130 90
+flags   picked on current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emankinectazure1.parm
+
+?
+sensor 0 V100061521531200000615215312
+image 0 color
+mirrorimage 0 on
+?
+
+
+------------------------------
+
+Emanlag1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag1.n
+
+CHOP:lag
+tile 250 -600 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag1.parm
+
+?
+lag1 0 0
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+1718
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag10.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag10.n
+
+CHOP:lag
+tile 2825 -1225 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	math9
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag10.parm
+
+?
+lag1 0 2
+lag2 0 0
+overshoot1 0 3
+overshoot2 0 3
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag10.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+chan1
+21.1998
+0.157325
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  21.1998 
+   
+
+
+
+
+------------------------------
+
+Emanlag2.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag2.n
+
+CHOP:lag
+tile 250 -1075 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag2.parm
+
+?
+lag1 0 0
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag2.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2219
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag3.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag3.n
+
+CHOP:lag
+tile 475 -1749 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag3.parm
+
+?
+lag1 0 0
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag3.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+272
+60
+chan1
+9.99999e-30
+-2.11527e-30
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag4.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag4.n
+
+CHOP:lag
+tile 500 -2174 130 90
+flags   viewer 1 activate on parlanguage 0
+inputs
+
+0 	trigger5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag4.parm
+
+?
+lag1 0 0
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag4.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2343
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag5.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag5.n
+
+CHOP:lag
+tile 2050 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	merge1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag5.parm
+
+?
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag5.ts
+
+65538
+4
+0
+599
+0
+0
+1
+1
+0
+0
+0
+280
+60
+chan1
+2.8026e-45
+0
+chan2
+2.8026e-45
+0
+chan3
+2.0571e-30
+-4.35134e-31
+chan4
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  4
+   
+      name  chan1
+      data_rle  0 
+   
+   
+      name  chan2
+      data_rle  0 
+   
+   
+      name  chan3
+      data_rle  0 
+   
+   
+      name  chan4
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag6.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag6.n
+
+CHOP:lag
+tile 475 -475 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag6.parm
+
+?
+lag1 0 0.2
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag6.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+1704
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag7.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag7.n
+
+CHOP:lag
+tile 425 -1250 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag7.parm
+
+?
+lag1 0 0.2
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag7.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2205
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag8.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag8.n
+
+CHOP:lag
+tile 600 -1575 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag8.parm
+
+?
+lag1 0 0.2
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag8.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+258
+60
+chan1
+1.35508e-28
+-2.86637e-29
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlag9.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlag9.n
+
+CHOP:lag
+tile 750 -2425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlag9.parm
+
+?
+lag1 0 0.2
+lag2 0 0.2
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlag9.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2329
+60
+chan1
+2.8026e-45
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlfo1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlfo1.n
+
+CHOP:lfo
+tile -850 1125 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlfo1.parm
+
+?
+frequency 0 0.39
+channelname 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanlfo1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+chan1
+0.943494
+0
+1
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  -0.347628 
+   
+
+
+
+
+------------------------------
+
+Emanlogic1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanlogic1.logic
+
+3
+1
+0
+1
+1
+1
+1
+5
+1
+1
+0
+5
+1
+2 0 0 
+1
+2 0 1 
+1
+2 0 1 
+1
+2 0 0 
+1
+2 0 0 
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanlogic1.n
+
+CHOP:logic
+tile 2225 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanlogic1.parm
+
+?
+convert 0 nonzero
+chanop 0 or
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanmath1.n
+
+CHOP:math
+tile 475 -600 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath1.parm
+
+?
+pageindex1 0 2
+torange1 0 0.5
+torange2 0 1
+?
+
+
+------------------------------
+
+Emanmath2.n
+
+CHOP:math
+tile 425 -1075 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath2.parm
+
+?
+pageindex1 0 2
+torange1 0 0.5
+torange2 0 1
+?
+
+
+------------------------------
+
+Emanmath3.n
+
+CHOP:math
+tile 650 -1749 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath3.parm
+
+?
+pageindex1 0 2
+torange1 0 0.5
+torange2 0 1
+?
+
+
+------------------------------
+
+Emanmath4.n
+
+CHOP:math
+tile 675 -2174 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath4.parm
+
+?
+pageindex1 0 2
+torange1 0 0.5
+torange2 0 1
+?
+
+
+------------------------------
+
+Emanmath5.n
+
+CHOP:math
+tile 650 -475 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag6
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath5.parm
+
+?
+pageindex1 0 2
+torange1 0 0
+torange2 0 3
+?
+
+
+------------------------------
+
+Emanmath6.n
+
+CHOP:math
+tile 625 -1250 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	lag7
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath6.parm
+
+?
+pageindex1 0 2
+torange1 0 0
+torange2 0 3
+?
+
+
+------------------------------
+
+Emanmath7.n
+
+CHOP:math
+tile 800 -1575 130 90
+flags   viewer 1 activate on parlanguage 0
+inputs
+
+0 	lag8
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath7.parm
+
+?
+pageindex1 0 2
+torange1 0 0
+torange2 0 3
+?
+
+
+------------------------------
+
+Emanmath8.n
+
+CHOP:math
+tile 950 -2425 130 90
+flags   viewer 1 activate on parlanguage 0
+inputs
+
+0 	lag9
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath8.parm
+
+?
+pageindex1 0 2
+torange1 0 0
+torange2 0 3
+?
+
+
+------------------------------
+
+Emanmath9.n
+
+CHOP:math
+tile 2625 -1200 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmath9.parm
+
+?
+pageindex1 0 1
+preoff 0 -1
+gain 0 -1
+torange1 0 0
+torange2 0 33
+?
+
+
+------------------------------
+
+Emanmerge1.n
+
+CHOP:merge
+tile 1900 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	null1
+1 	null2
+2 	null5
+3 	null6
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanmono1.n
+
+TOP:mono
+tile 500 425 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	blur1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull1.n
+
+CHOP:null
+tile 350 -775 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull2.n
+
+CHOP:null
+tile 350 -900 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull3.n
+
+CHOP:null
+tile 625 -600 130 90
+flags   viewer 1 export on parlanguage 0
+inputs
+
+0 	math1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull3.parm
+
+?
+exporttable 0 null3_export
+?
+
+
+------------------------------
+
+Emannull3_export.n
+
+DAT:table
+tile 625 -720 130 90
+flags   viewer 1 showDocked off parlanguage 0
+color 0.55 0.55 0.55 
+dock null3
+end
+
+
+------------------------------
+
+Emannull3_export.table
+
+1
+nameindexpath	parameterenablechan10	constant1alpha1
+
+------------------------------
+
+Emannull4.n
+
+CHOP:null
+tile 625 -1075 130 90
+flags   viewer 1 export on parlanguage 0
+inputs
+
+0 	math2
+
+color 0.55 0.55 0.55 
+view 5 -1 1 0.034375 -1.5 1.5 4 2 10648 10 0
+end
+
+
+------------------------------
+
+Emannull4.parm
+
+?
+exporttable 0 null4_export
+?
+
+
+------------------------------
+
+Emannull4_export.n
+
+DAT:table
+tile 625 -1195 130 90
+flags   viewer 1 showDocked off parlanguage 0
+color 0.55 0.55 0.55 
+dock null4
+end
+
+
+------------------------------
+
+Emannull4_export.table
+
+1
+nameindexpath	parameterenablechan10	constant2alpha1
+
+------------------------------
+
+Emannull5.n
+
+CHOP:null
+tile 575 -1874 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger4
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull5.parm
+
+?
+exporttable 0 null5_export1
+?
+
+
+------------------------------
+
+Emannull5_export.n
+
+DAT:table
+tile 800 -1874 130 90
+flags   viewer 1 showDocked off parlanguage 0
+color 0.55 0.55 0.55 
+dock null7
+end
+
+
+------------------------------
+
+Emannull5_export.table
+
+1
+nameindexpath	parameterenablechan10	constant1alpha0chan10	constant3alpha1
+
+------------------------------
+
+Emannull5_export1.n
+
+DAT:table
+tile 575 -1994 130 90
+flags   viewer 1 showDocked off parlanguage 0
+color 0.55 0.55 0.55 
+dock null5
+end
+
+
+------------------------------
+
+Emannull5_export1.table
+
+1
+nameindexpath	parameterenablechan10	constant3alpha0
+
+------------------------------
+
+Emannull6.n
+
+CHOP:null
+tile 575 -1999 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger5
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull6_export.n
+
+DAT:table
+tile 825 -2299 130 90
+flags   viewer 1 showDocked off parlanguage 0
+color 0.55 0.55 0.55 
+dock null8
+end
+
+
+------------------------------
+
+Emannull6_export.table
+
+1
+nameindexpath	parameterenablechan10	constant2alpha0chan10	constant4alpha1
+
+------------------------------
+
+Emannull7.n
+
+CHOP:null
+tile 800 -1749 130 90
+flags   viewer 1 export on parlanguage 0
+inputs
+
+0 	math3
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emannull7.parm
+
+?
+exporttable 0 null5_export
+?
+
+
+------------------------------
+
+Emannull8.n
+
+CHOP:null
+tile 825 -2174 130 90
+flags   viewer 1 activate on export on parlanguage 0
+inputs
+
+0 	math4
+
+color 0.55 0.55 0.55 
+view 5 -1 1 0.034375 -1.5 1.5 4 2 10648 10 0
+end
+
+
+------------------------------
+
+Emannull8.parm
+
+?
+exporttable 0 null6_export
+?
+
+
+------------------------------
+
+Emanoscout1.chop
+
+5
+1
+
+
+------------------------------
+
+Emanoscout1.n
+
+CHOP:oscout
+tile 2850 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	rename1
+
+color 0.55 0.55 0.55 
+view 5 -1 1 0.034375 -1.5 1.5 4 2 10648 10 0
+end
+
+
+------------------------------
+
+Emanoscout1.parm
+
+?
+netaddress 0 141.23.183.56
+port 0 4000
+format 0 sample
+sendrate 0 off
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emanoscout1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+ch1
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  ch1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emanout1.n
+
+TOP:out
+tile 1925 1050 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	BG
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanout1.parm
+
+?
+pageindex1 0 1
+?
+
+
+------------------------------
+
+Emanover1.n
+
+TOP:over
+tile 1400 1050 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	render1
+1 	comp1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanrename1.n
+
+CHOP:rename
+tile 2600 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	trigger1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanrename1.parm
+
+?
+renamefrom 0 " chan1"
+renameto 0 ch1
+?
+
+
+------------------------------
+
+Emanrender1.n
+
+TOP:render
+tile 200 875 130 90
+flags   viewer 1 parlanguage 0
+color 0.5 0.05 0.05 
+end
+
+
+------------------------------
+
+Emanrender1.parm
+
+?
+pageindex1 0 3
+camera 0 cam1
+geometry 0 
+lights 0 
+resolutionw 0 1280
+resolutionh 0 720
+outputaspect 0 useinput
+?
+
+
+------------------------------
+
+Emanrenderpick1.n
+
+CHOP:renderpick
+tile -225 -800 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanrenderpick1.parm
+
+?
+rendertop 0 render1
+pickingby 0 parameters
+picku 17 0.758 op'UV''p1hand_r:depthu'
+pickv 17 0.275 op'UV''p1hand_r:depthv'
+callbacks 0 renderpick1_callbacks
+exportmethod 0 datname
+?
+
+
+------------------------------
+
+Emanrenderpick1_callbacks.n
+
+DAT:text
+tile -213 -931 107 101
+flags   viewer 1 activate on parlanguage 0
+color 0.55 0.55 0.55 
+dock renderpick1
+view 8 0 1 1 1 0 -4.32424 0 0 1 1
+end
+
+
+------------------------------
+
+Emanrenderpick1_callbacks.parm
+
+?
+language 0 python
+?
+
+
+------------------------------
+
+Emanrenderpick1_callbacks.text
+
+2
+ The function below is called when any passed values have changed.
+ Be sure to turn on the related parameter in the CHOP to retrieve these values.
+
+ me - this DAT
+ renderPickOp - the connected Render Pick CHOP
+
+ event - a named tuple with the fields listed below.
+ eventPrev - a event holding the previous values.
+
+	u			- The selection u coordinate.			float
+	v			- The selection v coordinate.			float
+	select		- True when a selection is ongoing.		bool
+	selectStart	- True at the start of a selection.		bool
+	selectEnd	- True at the end of a selection.		bool
+	pickOp		- Currently picked operator.			OP
+	pos			- 3D position of picked point.			Position
+	texture		- Texture coordinate of picked point.	Position
+	color		- Color of picked point.				4-tuple
+	normal		- Geometry normal of picked point.		Vector
+	depth		- Post projection space depth.			float
+	instanceId	- Instance ID of the object.			int
+
+def onEventrenderPickOp, event, eventPrev:
+	if event.pickOp:
+		if event.pickOp  "EmanKickout1" :
+			op'kickTrigger'.par.triggerpulse.pulse
+		if event.pickOp  "EmanSnareout1" :
+			op'snareTrigger1'.par.triggerpulse.pulse
+	return
+
+	
+
+------------------------------
+
+Emanrenderpick2.n
+
+CHOP:renderpick
+tile 0 -1899 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emanrenderpick2.parm
+
+?
+rendertop 0 render1
+pickingby 0 parameters
+picku 17 0.758 op'UV1''p1hand_l:depthu'
+pickv 17 0.275 op'UV1''p1hand_l:depthv'
+callbacks 0 renderpick2_callbacks
+exportmethod 0 datname
+?
+
+
+------------------------------
+
+Emanrenderpick2_callbacks.n
+
+DAT:text
+tile -150 -2400 288 223
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+dock renderpick2
+view 8 0 1 1 1 0 -4.00965 0 0 1 1
+end
+
+
+------------------------------
+
+Emanrenderpick2_callbacks.parm
+
+?
+language 0 python
+?
+
+
+------------------------------
+
+Emanrenderpick2_callbacks.text
+
+2
+ The function below is called when any passed values have changed.
+ Be sure to turn on the related parameter in the CHOP to retrieve these values.
+
+ me - this DAT
+ renderPickOp - the connected Render Pick CHOP
+
+ event - a named tuple with the fields listed below.
+ eventPrev - a event holding the previous values.
+
+	u			- The selection u coordinate.			float
+	v			- The selection v coordinate.			float
+	select		- True when a selection is ongoing.		bool
+	selectStart	- True at the start of a selection.		bool
+	selectEnd	- True at the end of a selection.		bool
+	pickOp		- Currently picked operator.			OP
+	pos			- 3D position of picked point.			Position
+	texture		- Texture coordinate of picked point.	Position
+	color		- Color of picked point.				4-tuple
+	normal		- Geometry normal of picked point.		Vector
+	depth		- Post projection space depth.			float
+	instanceId	- Instance ID of the object.			int
+
+def onEventrenderPickOp, event, eventPrev:
+	if event.pickOp:
+		if event.pickOp  "EmanKick1out1" :
+			op'kickTrigger1'.par.triggerpulse.pulse
+		if event.pickOp  "EmanSnare1out1" :
+			op'snareTrigger2'.par.triggerpulse.pulse
+	return
+
+	
+
+------------------------------
+
+EmansnareTrigger1.chop
+
+5
+1
+
+
+------------------------------
+
+EmansnareTrigger1.n
+
+CHOP:trigger
+tile -25 -900 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmansnareTrigger1.parm
+
+?
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+EmansnareTrigger1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2277
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+EmansnareTrigger2.chop
+
+5
+1
+
+
+------------------------------
+
+EmansnareTrigger2.n
+
+CHOP:trigger
+tile 200 -1999 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+EmansnareTrigger2.parm
+
+?
+pageindex1 0 3
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+EmansnareTrigger2.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2406
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emansphere1.n
+
+SOP:sphere
+tile -725 675 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 29 0.2 1 1 0 0 1 0 0 1 1.32878 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 -0 -0 -4.21927 1 16 1 1 1 195 4883 1 -1 1 1 11 0 0 0 4 0 1
+end
+
+
+------------------------------
+
+Emansphere1.parm
+
+?
+radx 0 0.6
+rady 0 0.6
+radz 0 0.6
+?
+
+
+------------------------------
+
+Emantext1.n
+
+DAT:text
+tile -1400 -825 588 136
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+Emantext1.parm
+
+?
+language 0 text
+?
+
+
+------------------------------
+
+Emantext1.text
+
+2
+5In this thread I'm extracting data for the right hand
+
+------------------------------
+
+Emantext2.n
+
+DAT:text
+tile -1225 -1899 635 101
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+Emantext2.parm
+
+?
+language 0 text
+?
+
+
+------------------------------
+
+Emantext2.text
+
+2
+4In this thread I'm extracting data for the Left hand
+
+------------------------------
+
+Emantext3.n
+
+DAT:text
+tile 100 1050 588 136
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+Emantext3.parm
+
+?
+language 0 text
+?
+
+
+------------------------------
+
+Emantext3.text
+
+2
+This is the thread for visual rendering 
+
+------------------------------
+
+Emantext4.n
+
+DAT:text
+tile 2075 -775 588 136
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+Emantext4.parm
+
+?
+language 0 text
+?
+
+
+------------------------------
+
+Emantext4.text
+
+2
+OSC signal to VCV Rack
+
+------------------------------
+
+Emantrigger1.chop
+
+5
+1
+
+
+------------------------------
+
+Emantrigger1.n
+
+CHOP:trigger
+tile 2425 -975 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	logic1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emantrigger1.parm
+
+?
+pageindex1 0 1
+attack 0 0.02
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emantrigger1.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+293
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emantrigger2.chop
+
+5
+1
+
+
+------------------------------
+
+Emantrigger2.n
+
+CHOP:trigger
+tile 150 -775 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kickTrigger
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emantrigger2.parm
+
+?
+retrigger 0 0.1
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emantrigger2.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+1790
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emantrigger3.chop
+
+5
+1
+
+
+------------------------------
+
+Emantrigger3.n
+
+CHOP:trigger
+tile 150 -900 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	snareTrigger1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emantrigger3.parm
+
+?
+retrigger 0 0.1
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emantrigger3.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2291
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emantrigger4.chop
+
+5
+1
+
+
+------------------------------
+
+Emantrigger4.n
+
+CHOP:trigger
+tile 375 -1874 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	kickTrigger1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emantrigger4.parm
+
+?
+retrigger 0 0.02
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emantrigger4.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+344
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Emantrigger5.chop
+
+5
+1
+
+
+------------------------------
+
+Emantrigger5.n
+
+CHOP:trigger
+tile 375 -1999 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	snareTrigger2
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+Emantrigger5.parm
+
+?
+retrigger 0 0.04
+attack 0 0
+peaklen 0 0
+decay 0 0
+sustain 0 0
+release 0 0
+channame 0 chan1
+timeslice 0 on
+?
+
+
+------------------------------
+
+Emantrigger5.ts
+
+65538
+1
+0
+599
+0
+0
+1
+1
+0
+0
+0
+2415
+60
+chan1
+0
+0
+0
+0
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  1
+   
+      name  chan1
+      data_rle  0 
+   
+
+
+
+
+------------------------------
+
+Eman.n
+
+COMP:container
+v 1313.34 907.611 0.881154
+tile 100 25 400 244
+flags   viewer 1 parlanguage 0
+color 0.56 0.56 0.56 
+end
+
+
+------------------------------
+
+Eman.panel
+
+1
+3
+9
+u 0.777952
+v 0.205841
+trueu 0.777952
+truev 0.205841
+rollu 0.0430023
+screenw 1365
+screenh 698
+screenwm 1365
+screenhm 698
+
+
+------------------------------
+
+Eman.parm
+
+?
+pageindex1 0 1
+w 0 1280
+h 0 720
+helpdat 0 .help
+top 0 .out1
+topsmoothness 0 usetop
+dragscript 0 sysdrag
+dropscript 0 sysdrop
+parentshortcut 0 Project
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+localmapsmaster.n
+
+COMP:base
+v 408.5 324 1
+tile 210 140 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsmaster.parm
+
+?
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+localmapsreplicator1.n
+
+COMP:replicator
+tile 10 140 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsreplicator1.parm
+
+?
+repsuffixstart 0 0
+template 0 select2
+namefromtable 0 colbyname
+colname 0 id
+opprefix 0 id
+master 0 master
+destination 17 "" me.parent
+callbacks 0 replicator1_callbacks
+opviewer 0 .out1
+?
+
+
+------------------------------
+
+localmapsreplicator1.replicator
+
+3
+0
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.n
+
+DAT:text
+tile 10 -20 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+dock replicator1
+view 8 0 1 1 1 0 0 0 0 1 1
+end
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.parm
+
+?
+defaultreadencoding 0 cp1252
+?
+
+
+------------------------------
+
+localmapsreplicator1_callbacks.text
+
+2
+ me - this DAT
+ 
+ comp - the replicator component which is cooking
+ allOps - a list of all replicants, created or existing
+ newOps - the subset that were just created
+ template - table DAT specifying the replicator attributes
+ master - the master operator
+
+
+def replicatecomp, allOps, newOps, template, master:
+
+	for c in newOps:
+		c.display  True
+		c.render  True
+		c.par.display  1
+		c.par.clone  comp.par.master
+	
+		c.par.clone.expr  "op'..mididevice'me.digits, 'definition'  'mapmaster1'"
+
+		pass
+
+	return
+
+
+------------------------------
+
+localmapsselect1.n
+
+DAT:select
+tile -300 160 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect1.parm
+
+?
+dat 0 localmididevice
+rowindexend 17 0 "me.inputs0.numRows - 1"
+rownames 0 
+extractcols 0 bynames
+colindexend 17 4 "me.inputs0.numCols - 1"
+colnames 0 "id definition"
+?
+
+
+------------------------------
+
+localmapsselect2.n
+
+DAT:select
+tile -150 160 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	select1
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmapsselect2.parm
+
+?
+extractrows 0 bynames
+rowindexend 17 0 "me.inputs0.numRows - 1"
+rownames 0 ?
+fromcol 0 1
+colindexend 17 1 "me.inputs0.numCols - 1"
+colnames 0 
+?
+
+
+------------------------------
+
+localmaps.n
+
+COMP:base
+v 309.531 186.79 0.93596
+tile 250 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaps.parm
+
+?
+opviewer 0 .id1
+?
+
+
+------------------------------
+
+localmaster_beat.beat
+
+1
+
+
+------------------------------
+
+localmaster_beat.chop
+
+5
+1
+
+
+------------------------------
+
+localmaster_beat.n
+
+CHOP:beat
+tile 50 -125 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmaster_beat.parm
+
+?
+updateglobal 0 on
+timeslice 0 on
+?
+
+
+------------------------------
+
+localmidi.lod
+
+4W.buildversion 099
+build 2022.35320
+time Wed Oct  2 12:15:32 2024
+osname Windows
+osversion 10
+4	Ydevice.nDAT:table
+tile 50 -130 644 126
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Ddevice.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 1
+cols 0 5
+?
+4
+_device.table1
+idindevice	outdevice
+definitionchannel4rtemplate.nCOMP:base
+v 262.219 202.09 0.818811
+tile 310 50 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4template.parm?
+opviewer 0 .icon
+?
+64	template4iicon.nTOP:null
+tile 170 0 130 67
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	text1
+
+color 0.55 0.55 0.55 
+end
+4
+.icon.parm?
+fillmode 0 useinput
+filtertype 0 useinput
+?
+4Stext1.nTOP:text
+tile 0 0 130 67
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4text1.parm?
+text 0 "User Map"
+legacyparsing 0 on
+leadingzero 0 off
+chopvaluereplace 0 on
+dispmethod 0 polygon
+fontsizex 0 24.6
+fontsizexunit 0 pixels
+fontsizeyunit 0 pixels
+resolutionw 0 200
+resolutionh 0 100
+resmult 0 off
+?
+4
+Xbuttons.nDAT:table
+tile 350 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+Ebuttons.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 16
+cols 0 3
+?
+4buttons.table1
+b1b? 41 7fb? 41 00b2b? 42 7fb? 42 00b3b? 43 7fb? 43 00b4b? 44 7fb? 44 00b5b? 45 7fb? 45 00b6b? 46 7fb? 46 00b7b? 47 7fb? 47 00b8b? 48 7fb? 48 00b9b? 49 7fb? 49 00b10b? 4a 7fb? 4a 00b11b? 4b 7fb? 4b 00b12b? 4c 7fb? 4c 00b13b? 4d 7fb? 4d 00b14b? 4e 7fb? 4e 00b15b? 4f 7fb? 4f 00b16b? 50 7fb? 50 004
+Xsliders.nDAT:table
+tile 170 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+Esliders.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 16
+cols 0 2
+?
+4sliders.table1
+s1b? 51 --s2b? 52 --s3b? 53 --s4b? 54 --s5b? 55 --s6b? 56 --s7b? 57 --s8b? 58 --s9b? 01 --s10b? 02 --s11b? 03 --s12b? 04 --s13b? 05 --s14b? 06 --s15b? 07 --s16b? 08 --4
+Vattributes.nDAT:table
+tile 0 200 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Dattributes.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 1
+cols 0 2
+?
+46attributes.table1
+nameUser Device Map4
+zmapmaster1.nCOMP:base
+v 86.156 363.08 1.24945
+tile 520 0 160 130
+flags   current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4mapmaster1.parm?
+opviewer 0 .out1
+?
+64mapmaster14out1.nCHOP:out
+tile 250 25 130 90
+flags   current on viewer 1 parlanguage 0
+inputs
+
+0 	midiinmap
+
+color 0.55 0.55 0.55 
+view 0 6 0 0 0 0 0 0
+end
+4
+out1.parm?
+exportmethod 0 autoname
+autoexportroot 17 "" me.parent
+?
+4
+wbuttons.nCHOP:null
+tile 250 -210 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_buttons
+
+color 0.55 0.55 0.55 
+end
+4
+buttons.parm?
+autoexportroot 17 "" me.parent
+?
+4
+midiout.nCHOP:midiout
+tile 590 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4
+midiout.parm?
+device 0 localmididevice
+id 17 1 parent.digits
+file 0 untitled.midi
+prefix 0 ch
+notename 0 n
+aftername 0 a
+pressname 0 pr
+pitchname 0 pw
+controlname 0 c
+progname 0 pc
+timeslice 0 on
+autoexportroot 17 "" me.parent
+?
+4
+midiout.chop5
+1
+4amidiout.ts65538
+0
+0
+599
+0
+0
+1
+1
+0
+0
+0
+0
+60
+
+   rate  60
+   start  0
+   tracklength  1
+   tracks  0
+
+
+4
+wsliders.nCHOP:null
+tile 250 -100 130 90
+flags   viewer 1 parlanguage 0
+inputs
+
+0 	collect_sliders
+
+color 0.55 0.55 0.55 
+end
+4
+sliders.parm?
+autoexportroot 17 "" me.parent
+?
+4chopexec1.nDAT:chopexec
+tile 420 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+view 8 0 1 1 1 0 0.388199 0 0 1 1
+end
+4Schopexec1.parm?
+fromop 17 "" me.parent
+chop 0 "sliders buttons"
+defaultreadencoding 0 cp1252
+?
+4fchopexec1.text2
+K me - this DAT
+ 
+ channel - the Channel object which has changed
+ sampleIndex - the index of the changed sample
+ val - the numeric value of the changed sample
+ prev - the previous sample value
+ 
+ Make sure the corresponding toggle is enabled in the CHOP Execute DAT.
+
+ use the methods of midiout, see midioutCHOP Class help
+ For example;
+ maptable  op'localmididevice'
+ ch  maptableparent.digits, 'channel'
+ op'midiout'.sendNoteOnch, index, val
+ op'midiout'.sendNoteOffch, index, val
+ op'midiout'.sendControlch, index, val
+
+
+def offToOnchannel, sampleIndex, val, prev:
+	return
+
+def whileOnchannel, sampleIndex, val, prev:
+	return
+
+def onToOffchannel, sampleIndex, val, prev:
+	return
+
+def whileOffchannel, sampleIndex, val, prev:
+	return
+
+def valueChangechannel, sampleIndex, val, prev:
+	return
+	4midiinmap.nCHOP:midiinmap
+tile 50 25 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4midiinmap.parm?
+device 0 localmididevice
+id 49 OPD parent.digits
+sliders 0 
+buttons 0 
+rate 16 60 me.time.rate
+exportmethod 0 autoname
+autoexportroot 17 "" me.parent
+?
+4collect_buttons.nCHOP:constant
+tile 50 -210 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4ccollect_buttons.parm?
+name0 0 chan1
+rate 16 60 me.time.rate
+exportmethod 0 autoname
+autoexportroot 17 "" me.parent
+?
+4collect_sliders.nCHOP:constant
+tile 50 -100 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4ccollect_sliders.parm?
+name0 0 chan1
+rate 16 60 me.time.rate
+exportmethod 0 autoname
+autoexportroot 17 "" me.parent
+?
+554Ymidi_inputs.nDAT:table
+tile 200 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Dmidi_inputs.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 0
+cols 0 0
+?
+4midi_inputs.table1
+4userdevices.nCOMP:base
+v 578.908 181.843 0.43217
+tile 800 50 160 130
+flags   picked on current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+4userdevices.parm?
+opviewer 0 .out1
+?
+4Xmidi_outputs.nDAT:table
+tile 50 -250 130 90
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+4Dmidi_outputs.parm?
+defaultreadencoding 0 cp1252
+removeblank 0 on
+rows 0 0
+cols 0 0
+?
+47midi_outputs.table1
+Microsoft GS Wavetable Synth
+
+------------------------------
+
+localmidi.n
+
+COMP:base
+v 144.459 286.388 0.840696
+tile 50 -300 160 130
+flags   current on parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localmidi.parm
+
+?
+opviewer 0 .device
+loadondemand 0 on
+?
+
+
+------------------------------
+
+localset_variables.n
+
+DAT:table
+tile 25 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localset_variables.table
+
+1
+TOENAMEVisual sound interactivelink.2.toe
+
+------------------------------
+
+localshortcuts.n
+
+DAT:filein
+tile 325 0 130 90
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localshortcuts.parm
+
+?
+file 17 "" "app.configFolder  'PanelShortcuts.txt'"
+converttable 0 on
+?
+
+
+------------------------------
+
+localtime.n
+
+COMP:time
+tile 450 -300 160 130
+flags   parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+localtime.parm
+
+?
+rate 17 60 cookRate
+opviewer 0 .out1
+clone 0 syslocaltime
+?
+
+
+------------------------------
+
+localvariables.n
+
+DAT:null
+tile 175 0 130 90
+flags   parlanguage 0
+inputs
+
+0 	set_variables
+
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.n
+
+COMP:base
+tile -200 -725 160 130
+flags   viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+local.parm
+
+?
+opviewer 0 .variables
+?
+
+
+------------------------------
+
+perform.n
+
+COMP:window
+v 791.988 472.258 0.22401
+comment "Perform Mode configuration:nPress F1 to enter Perform Mode, ESC to exit"
+tile -200 40 160 130
+flags   picked on current on viewer 1 parlanguage 0
+color 0.55 0.55 0.55 
+end
+
+
+------------------------------
+
+perform.parm
+
+?
+winop 0 Eman
+justifyh 0 center
+justifyv 0 center
+opviewer 0 .out1
+?
+
+
+------------------------------
+

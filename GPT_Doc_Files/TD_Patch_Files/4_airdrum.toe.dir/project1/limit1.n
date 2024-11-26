@@ -1,0 +1,9 @@
+CHOP:limit
+tile 925 -425 188 111
+flags =  viewer 1 parlanguage 0
+inputs
+{
+0 	math2
+}
+color 0.55 0.55 0.55 
+end

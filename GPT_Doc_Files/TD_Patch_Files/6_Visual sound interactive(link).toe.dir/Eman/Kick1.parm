@@ -1,0 +1,10 @@
+?
+tx 48 -0.9 op('lfo1')['chan1']
+ty 32 -0.5
+tz 32 0
+sx 32 0.5
+sy 48 0.5 op('lfo1')['chan1']
+sz 32 0.5
+material 0 constant3
+opviewer 0 ./out1
+?
