@@ -2,7 +2,7 @@
 
 ## Room To Expand Files
 
-This repository collects all the files from the [Room to Expand]([url](https://www.udk-berlin.de/universitaet/online-lehre-an-der-universitaet-der-kuenste-berlin/inkuele/body-as-interface/)) workshop of the [Inküle](https://www.inkuele.de) project: 
+This repository collects all the files from the [Room to Expand](https://www.udk-berlin.de/universitaet/online-lehre-an-der-universitaet-der-kuenste-berlin/inkuele/body-as-interface/) workshop of the [Inküle](https://www.inkuele.de) project: 
 
 The files are mostly TouchDesigner patches that use the Kinect Azure camera to track human movement and generate visual and audio events.
 In one case, the audio generation is done with an external software, SuperCollider, which receives the data as OSC from TouchDesigner.
